@@ -4,3 +4,4 @@
 .classpath
 .springBeans
 /test-output/
+.tern-project
