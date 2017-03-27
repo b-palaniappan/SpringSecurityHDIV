@@ -16,14 +16,37 @@
       <script src="resources/js/html5shiv.min.js"></script>
       <script src="resources/js/respond.min.js"></script>
     <![endif]-->
+    <link href="resources/css/app.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <div class="row" id="pwd-container">
+      	<div class="col-md-4"></div>
+      	<div class="col-md-4">
+      	  <section class="login-form">
+      	  	<form method="post" action="#" role="login">
+      	  	  <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+      	  	  <input type="email" name="email" placeholder="Email" required class="form-control input-lg" />
+          	  <input type="password" class="form-control input-lg" id="password" placeholder="Password" />
+          	  <div class="pwstrength_viewport_progress"></div>
+          	  <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+          	  <div>
+                <a href="#">Create account</a> or <a href="#">reset password</a>
+              </div>
+      	  	</form>
+      	  	<div class="form-links">
+          	  <a href="#">c12.io</a>
+        	</div>
+      	  </section>
+      	</div>
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="resources/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-3.2.0.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="resources/js/bootstrap.min.js"></script>
-    <script src="resources/js/pwstrength-bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/pwstrength-bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/app.js"></script>
   </body>
 </html>
