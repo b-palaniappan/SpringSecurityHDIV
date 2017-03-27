@@ -13,7 +13,7 @@
 		<security:intercept-url pattern="/forgotPassword" access="permitAll"/>
 		<security:intercept-url pattern="/resources/**" access="permitAll"/>
 		<security:intercept-url pattern="/**" access="authenticated"/>
-		<security:form-login login-page="/login" login-processing-url="/spring_security_check" default-target-url="/" />
+		<security:form-login login-page="/login" login-processing-url="/spring_security_check" default-target-url="/welcome" />
 		<security:logout invalidate-session="true" delete-cookies="JSESSIONID" logout-success-url="/login" />
 		<!-- Spring Security - Session management configuration -->
 		<!-- Allow only user per login id. Creates new Session id and session after login -->
