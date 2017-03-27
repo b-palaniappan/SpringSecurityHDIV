@@ -28,11 +28,6 @@
 	<listener>
 		<listener-class>org.hdiv.listener.InitListener</listener-class>
 	</listener>
-	
-	<!-- HTTP Session Listener -->
-	<listener>
-		<listener-class>io.c12.bala.springwebmvc.session.SessionListener</listener-class>
-	</listener>
 
 	<!-- Processes application requests -->
 	<servlet>
