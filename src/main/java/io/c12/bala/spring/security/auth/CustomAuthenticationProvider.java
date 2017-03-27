@@ -18,39 +18,48 @@
  */
 package io.c12.bala.spring.security.auth;
 
+import java.util.Collection;
+import java.util.HashSet;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 /**
  * @author b.palaniappan
  *
  */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
-
-	/**
-	 * 
-	 */
-	public CustomAuthenticationProvider() {
-		// TODO Auto-generated constructor stub
-	}
+	
+	private static final Logger logger = LoggerFactory.getLogger(CustomAuthenticationProvider.class);
 
 	/* (non-Javadoc)
 	 * @see org.springframework.security.authentication.AuthenticationProvider#authenticate(org.springframework.security.core.Authentication)
 	 */
 	@Override
-	public Authentication authenticate(Authentication arg0) throws AuthenticationException {
-		// TODO Auto-generated method stub
-		return null;
+	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+		
+		String userName = authentication.getName();
+		String password = (String) authentication.getCredentials();
+		logger.info("User Id : " + userName + " | Password : " + password);
+		
+		Collection<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
+		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+		
+		return new UsernamePasswordAuthenticationToken(userName, password, grantedAuthorities);
 	}
 
 	/* (non-Javadoc)
 	 * @see org.springframework.security.authentication.AuthenticationProvider#supports(java.lang.Class)
 	 */
 	@Override
-	public boolean supports(Class<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean supports(Class<? extends Object> authentication) {
+		return authentication.equals(UsernamePasswordAuthenticationToken.class);
 	}
 
 }

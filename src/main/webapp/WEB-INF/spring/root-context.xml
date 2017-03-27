@@ -13,7 +13,7 @@
 		<security:intercept-url pattern="/forgotPassword" access="permitAll"/>
 		<security:intercept-url pattern="/resources/**" access="permitAll"/>
 		<security:intercept-url pattern="/**" access="authenticated"/>
-		<security:form-login login-page="/login" login-processing-url="/spring_security_check" default-target-url="/" authentication-failure-handler-ref="customAuthenticationFailureHander" />
+		<security:form-login login-page="/login" login-processing-url="/spring_security_check" default-target-url="/" />
 		<security:logout invalidate-session="true" delete-cookies="JSESSIONID" logout-success-url="/login" />
 		<!-- Spring Security - Session management configuration -->
 		<!-- Allow only user per login id. Creates new Session id and session after login -->
@@ -36,9 +36,6 @@
 	
 	<!-- Custom Authentication Provider -->
 	<bean id="customAuthenticationProvider" class="io.c12.bala.spring.security.auth.CustomAuthenticationProvider" />
-	
-	<!-- Custom authentication failure handler -->
-	<bean id="customAuthenticationFailureHander" class="io.c12.bala.spring.security.auth.CustomAuthenticationFailureHander" />
 	
 	<security:global-method-security secured-annotations="enabled"></security:global-method-security>
 	<!-- Root Context: defines shared resources visible to all other web components -->
