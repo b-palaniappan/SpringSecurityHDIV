@@ -23,7 +23,7 @@
           	  <div class="pwstrength_viewport_progress"></div>
           	  <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
           	  <div>
-                <a href="#">Create account</a> or <a href="#">reset password</a>
+                <a href="/register">Create account</a> or <a href="/forgotPassword">reset password</a>
               </div>
       	  	</form:form>
       	  	<div class="form-links">
