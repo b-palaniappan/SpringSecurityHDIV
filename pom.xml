@@ -108,12 +108,12 @@
 			<artifactId>javax.mail</artifactId>
 			<version>${javax.mail.version}</version>
 		</dependency>
-		
+
 		<!-- Spring Security -->
 		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-core</artifactId>
-		    <version>${spring.security.version}</version>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -135,7 +135,7 @@
 			<artifactId>spring-security-ldap</artifactId>
 			<version>${spring.security.version}</version>
 		</dependency>
-		
+
 		<!-- HDIV Security libraries -->
 		<dependency>
 			<groupId>org.hdiv</groupId>
@@ -157,9 +157,9 @@
 			<artifactId>hdiv-config</artifactId>
 			<version>${hdiv.version}</version>
 		</dependency>
-		
+
 		<!-- ESAPI Libraries -->
-		 <dependency>
+		<dependency>
 			<groupId>org.owasp.esapi</groupId>
 			<artifactId>esapi</artifactId>
 			<version>${esapi.version}</version>
@@ -168,7 +168,7 @@
 		<!-- Taglib -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-    		<artifactId>jstl</artifactId>
+			<artifactId>jstl</artifactId>
 			<version>${jstl.verson}</version>
 		</dependency>
 
@@ -185,6 +185,46 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warSourceExcludes>**/app.css</warSourceExcludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.samaxes.maven</groupId>
+				<artifactId>minify-maven-plugin</artifactId>
+				<version>1.7.6</version>
+				<executions>
+					<execution>
+						<id>default-minify</id>
+						<phase>package</phase>
+						<configuration>
+							<cssSourceDir>resources/css</cssSourceDir>
+							<cssSourceIncludes>
+								<cssSourceInclude>**</cssSourceInclude>
+							</cssSourceIncludes>
+							<cssSourceExcludes>
+								<cssSourceExclude>**/*.min.css</cssSourceExclude>
+							</cssSourceExcludes>
+							<jsEngine>CLOSURE</jsEngine>
+							<jsSourceDir>resources/js</jsSourceDir>
+							<jsSourceIncludes>
+								<jsSourceInclude>**</jsSourceInclude>
+							</jsSourceIncludes>
+							<jsSourceExcludes>
+								<jsSourceExclude>**/*.min.js</jsSourceExclude>
+							</jsSourceExcludes>
+						</configuration>
+						<goals>
+							<goal>minify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

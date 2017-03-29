@@ -33,5 +33,10 @@ public class LoginController {
 	public String Login() {
 		return "login";
 	}
+	
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	public String Welcome() {
+		return "welcome";
+	}
 
 }

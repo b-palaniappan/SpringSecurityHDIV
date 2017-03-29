@@ -7,6 +7,7 @@
 
 	<!-- no security for request to resources -->
 	<security:http pattern="/resources/**" security="none" />
+	<security:http pattern="/error" security="none" />
 	
 	<security:http auto-config="true" use-expressions="true" servlet-api-provision="true" >
 		<security:intercept-url pattern="/login" access="permitAll"/>
@@ -14,7 +15,7 @@
 		<security:intercept-url pattern="/resources/**" access="permitAll"/>
 		<security:intercept-url pattern="/**" access="authenticated"/>
 		<security:form-login login-page="/login" login-processing-url="/spring_security_check" default-target-url="/welcome" />
-		<security:logout invalidate-session="true" delete-cookies="JSESSIONID" logout-success-url="/login" />
+		<security:logout invalidate-session="true" delete-cookies="JSESSIONID" logout-success-url="/login" logout-url="/logout" />
 		<!-- Spring Security - Session management configuration -->
 		<!-- Allow only user per login id. Creates new Session id and session after login -->
 		<security:session-management invalid-session-url="/login" session-authentication-error-url="/login" session-fixation-protection="newSession">
