@@ -20,6 +20,11 @@
 		<hdiv.version>3.2.0</hdiv.version>
 		<esapi.version>2.1.0.1</esapi.version>
 		<jstl.verson>1.2</jstl.verson>
+		<arangodb.driver.version>4.1.11</arangodb.driver.version>
+		<scrypt.version>1.4.0</scrypt.version>
+		<testng.testing.version>6.11</testng.testing.version>
+		<junit.testing.version>4.12</junit.testing.version>
+		<mockito.mock.version>2.7.21</mockito.mock.version>
 	</properties>
 
 	<dependencies>
@@ -171,19 +176,39 @@
 			<artifactId>jstl</artifactId>
 			<version>${jstl.verson}</version>
 		</dependency>
-		
+
 		<!-- ArangoDB Driver -->
 		<dependency>
 			<groupId>com.arangodb</groupId>
 			<artifactId>arangodb-java-driver</artifactId>
-			<version>4.1.11</version>
+			<version>${arangodb.driver.version}</version>
 		</dependency>
-		
+
 		<!-- Password hash using scrypt -->
 		<dependency>
 			<groupId>com.lambdaworks</groupId>
 			<artifactId>scrypt</artifactId>
-			<version>1.4.0</version>
+			<version>${scrypt.version}</version>
+		</dependency>
+
+		<!-- Unit Testing using TestNg and Mockito -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.mock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.testing.version}</version>
+			<scope>test</scope>
+		</dependency> -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.testing.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>

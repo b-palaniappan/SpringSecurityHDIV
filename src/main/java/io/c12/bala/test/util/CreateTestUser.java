@@ -36,7 +36,8 @@ import io.c12.bala.db.domain.User;
 
 /**
  * @author b.palaniappan
- *
+ * 
+ * Stand alone program to check the ArangoDB connection / Data / Query
  */
 public class CreateTestUser {
 
