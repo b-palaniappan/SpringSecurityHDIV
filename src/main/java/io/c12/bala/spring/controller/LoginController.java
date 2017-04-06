@@ -18,9 +18,13 @@
  */
 package io.c12.bala.spring.controller;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import io.c12.bala.service.UserService;
 
 /**
  * @author b.palaniappan
@@ -28,6 +32,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class LoginController {
+	
+	@Resource(name = "userService")
+	private UserService userService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String Login() {

@@ -37,7 +37,7 @@ import io.c12.bala.db.domain.User;
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
 	
-	private static final String DB_NAME = "mydb";
+	private static final String DB_NAME = "SpringHDIV";
 	
 	private static final String COLLECTION_NAME = "USER";
 	
@@ -51,16 +51,12 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public final String getPasswordHashByUserId(String userId) {
-		String query = "for u in user filter u.auth.userId == @userId return u.auth.password";
+		String query = "for u in USER filter u.auth.status =='ACTIVE' and u.auth.userId == @userId return u.auth.password";
 		Map<String, Object> bindVars = new MapBuilder().put("userId", userId).get();
 		ArangoCursor<String> passwordHashCursor = getDb().query(query, bindVars, null, String.class);
-		if (passwordHashCursor.getCount() != 1) {
-			return null;
-		} else {
-			passwordHashCursor.forEachRemaining(password -> {
-				passwordHash = password;
-			});
-		}
+		passwordHashCursor.forEachRemaining(password -> {
+			passwordHash = password;
+		});
 		return passwordHash;
 	}
 

@@ -30,5 +30,5 @@ public interface UserService {
 	 * @return true if user id and password are authenticated
 	 */
 	public boolean authenticateUser(String userId, String password);
-
+	
 }

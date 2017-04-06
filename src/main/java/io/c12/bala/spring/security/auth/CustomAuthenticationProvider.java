@@ -31,6 +31,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.stereotype.Component;
 
 import io.c12.bala.service.UserService;
 
@@ -38,6 +39,7 @@ import io.c12.bala.service.UserService;
  * @author b.palaniappan
  *
  */
+@Component("customAuthenticationProvider")
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 	
 	@Resource(name = "userService")
@@ -61,7 +63,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		} 
 		logger.warn("Authentication failed for user id - " + userId);
 		return null;
-		
 	}
 
 	/* (non-Javadoc)

@@ -20,6 +20,8 @@ package io.c12.bala.service;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.lambdaworks.crypto.SCryptUtil;
@@ -33,6 +35,8 @@ import io.c12.bala.db.dao.UserDao;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 	
+	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	
 	@Resource(name = "userDao")
 	private UserDao userDao;
 
@@ -42,7 +46,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean authenticateUser(String userId, String password) {
 		String passwordHash = userDao.getPasswordHashByUserId(userId);
-		return SCryptUtil.scrypt(password, 16,16,16).equals(passwordHash);
+		if (passwordHash == null) {
+			return false;
+		}
+		return SCryptUtil.check(password, passwordHash);
 	}
 
 }
