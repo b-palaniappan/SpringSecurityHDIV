@@ -21,6 +21,8 @@ package io.c12.bala.spring.security.auth;
 import java.util.Collection;
 import java.util.HashSet;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -30,11 +32,16 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+import io.c12.bala.service.UserService;
+
 /**
  * @author b.palaniappan
  *
  */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
+	
+	@Resource(name = "userService")
+	private UserService userService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(CustomAuthenticationProvider.class);
 
@@ -44,14 +51,17 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		
-		String userName = authentication.getName();
+		String userId = authentication.getName();
 		String password = (String) authentication.getCredentials();
-		logger.info("User Id : " + userName + " | Password : " + password);
+		if (userService.authenticateUser(userId, password)) {
+			Collection<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
+			grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+			
+			return new UsernamePasswordAuthenticationToken(userId, password, grantedAuthorities);
+		} 
+		logger.warn("Authentication failed for user id - " + userId);
+		return null;
 		
-		Collection<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
-		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-		
-		return new UsernamePasswordAuthenticationToken(userName, password, grantedAuthorities);
 	}
 
 	/* (non-Javadoc)
