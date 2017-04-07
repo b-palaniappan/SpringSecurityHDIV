@@ -14,62 +14,52 @@
 
 <body>
 	<%-- Fixed navbar --%>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Spring Secure</a>
-        </div>
-      </div>
-    </nav>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Spring Secure</a>
+			</div>
+		</div>
+	</nav>
 
-    <div class="container theme-showcase" role="main">
-
-      <%-- Main jumbotron for a primary marketing message or call to action --%>
-      <!-- <div class="jumbotron">
-        <h1>Spring Secure</h1>
-        <p>Welcome to Spring Security with HDIV example login page</p>
-      </div> -->
-
-      <div class="page-header">
-        <h1>Login</h1>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-        </div><%-- /.col-sm-3 --%>
-        <div class="col-sm-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Login Here</h3>
-            </div>
-            <div class="panel-body">
-              <form:form method="post" action="/spring_security_check" role="login">
-              <div class="form-group">
-    			<label for="inputUserName">Email address</label>
-    			<input name="username" type="email" class="form-control" id="inputUserName" placeholder="Email" required>
-  			  </div>
-  			  <div class="form-group">
-    			<label for="password">Password</label>
-    			<input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
-  			  </div>
-          	  <button type="submit" name="go" class="btn btn-primary">Sign in</button>
-          	  
-      	  	</form:form>
-            </div>
-          </div>
-          <div>
-			<a href="/register">Create account</a> or <a href="/forgotPassword">Forgot password</a>
-		  </div>
-        </div><%-- /.col-sm-6 --%>
-        <div class="col-sm-3">
-        </div><%-- /.col-sm-3 --%>
-      </div>
-    </div> <%-- /container --%>
+	<div class="container theme-showcase" role="main">
+		<div class="page-header">
+			<h1>Login</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-3"></div> <%-- /.col-sm-3 --%>
+			<div class="col-sm-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Login Here</h3>
+					</div>
+					<div class="panel-body">
+						<form:form method="post" action="/spring_security_check" role="login">
+							<div class="form-group">
+								<label for="inputUserName">Email address</label> 
+								<input name="username" type="email" class="form-control" id="inputUserName" placeholder="Email" required>
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label> 
+								<input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+							</div>
+							<button type="submit" name="go" class="btn btn-primary">Sign in</button>
+						</form:form>
+					</div>
+				</div>
+				<div>
+					<a href="/register">Create account</a> or <a href="/forgotPassword">Forgot password</a>
+				</div>
+			</div> <%-- /.col-sm-6 --%>
+			<div class="col-sm-3"></div> <%-- /.col-sm-3 --%>
+		</div>
+	</div> <%-- /container --%>
 	<jsp:include page="jspf/footer-include.jsp" />
 </body>
 </html>

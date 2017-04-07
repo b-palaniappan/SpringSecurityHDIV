@@ -22,18 +22,11 @@
 })();
 
 /**
- * Login Page JS code
+ * Welcome page logout
  */
-
-jQuery(document).ready(function() {
-	'use strict';
-	var options = {};
-	options.ui = {
-		container : '#pwd-container',
-		showVerdictsInsideProgressBar : true,
-		viewports : {
-			progress : ".pwstrength_viewport_progress"
-		}
-	};
-	$(':password').pwstrength(options);
+$(function() {
+	$('#linkLogout').on('click', function(e){
+		e.preventDefault();
+		$('#formLogout').submit();
+	});
 });
