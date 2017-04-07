@@ -22,6 +22,37 @@
 })();
 
 /**
+ * Login page
+ */
+// login form Validation
+$('#formLogin').validate({
+	rules: {
+		username: {
+			required: true,
+			email: true
+		},
+		password: {
+			required: true,
+			minlength: 8
+		}
+	},
+	messages: {
+		username: 'Email address is required',
+		password: {
+			required: 'Password is required',
+			minlength: 'Password need to be more than 8 char'
+		}
+	},
+	errorClass : 'help-block',
+	highlight: function(element, errorClass) {
+		$('#' + element.id ).closest('div').addClass('has-error');
+	},
+	unhighlight : function(element, errorClass) {
+		$('#' + element.id ).closest('div').removeClass('has-error');
+	}
+});
+
+/**
  * Welcome page logout
  */
 $(function() {

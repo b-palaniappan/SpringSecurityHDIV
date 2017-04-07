@@ -18,13 +18,9 @@
  */
 package io.c12.bala.spring.controller;
 
-import javax.annotation.Resource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import io.c12.bala.service.UserService;
 
 /**
  * @author b.palaniappan
@@ -33,17 +29,31 @@ import io.c12.bala.service.UserService;
 @Controller
 public class LoginController {
 	
-	@Resource(name = "userService")
-	private UserService userService;
-
+	/**
+	 * @return login string
+	 * Login page redirect
+	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String Login() {
 		return "login";
 	}
 	
+	/**
+	 * @return welcome string
+	 * Welcome page redirect
+	 */
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String Welcome() {
 		return "welcome";
+	}
+	
+	/**
+	 * @return error String
+	 * Error page Redirect
+	 */
+	@RequestMapping(value = "/error", method = RequestMethod.GET)
+	public String Error() {
+		return "error";
 	}
 
 }
