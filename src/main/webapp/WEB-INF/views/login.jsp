@@ -31,10 +31,10 @@
     <div class="container theme-showcase" role="main">
 
       <%-- Main jumbotron for a primary marketing message or call to action --%>
-      <div class="jumbotron">
+      <!-- <div class="jumbotron">
         <h1>Spring Secure</h1>
         <p>Welcome to Spring Security with HDIV example login page</p>
-      </div>
+      </div> -->
 
       <div class="page-header">
         <h1>Login</h1>
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div>
-			<a href="/register">Create account</a> or <a href="/forgotPassword">reset password</a>
+			<a href="/register">Create account</a> or <a href="/forgotPassword">Forgot password</a>
 		  </div>
         </div><%-- /.col-sm-6 --%>
         <div class="col-sm-3">
