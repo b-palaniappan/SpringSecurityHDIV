@@ -61,3 +61,22 @@ $(function() {
 		$('#formLogout').submit();
 	});
 });
+
+/**
+ * Registration Page
+ */
+$('#formRegister').validation({
+	rules: {
+		
+	},
+	messages: {
+		
+	},
+	errorClass : 'help-block',
+	highlight: function(element, errorClass) {
+		$('#' + element.id ).closest('div').addClass('has-error');
+	},
+	unhighlight : function(element, errorClass) {
+		$('#' + element.id ).closest('div').removeClass('has-error');
+	}
+});

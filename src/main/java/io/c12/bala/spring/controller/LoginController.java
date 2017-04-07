@@ -55,5 +55,10 @@ public class LoginController {
 	public String Error() {
 		return "error";
 	}
+	
+	@RequestMapping(value = "/register", method =  RequestMethod.GET)
+	public String Register() {
+		return "register";
+	}
 
 }

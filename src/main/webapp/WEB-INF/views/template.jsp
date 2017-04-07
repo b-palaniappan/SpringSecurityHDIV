@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Spring Security HDIV">
     <meta name="author" content="b-palaniappan">
-    
+    <meta name="_csrf" content="${_csrf.token}"/>
+	<meta name="_csrf_header" content="${_csrf.headerName}"/>
     <title>Secure Login</title>
     <jsp:include page="jspf/header-include.jsp" />
   </head>

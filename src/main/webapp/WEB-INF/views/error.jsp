@@ -8,6 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Spring Security HDIV">
 <meta name="author" content="b-palaniappan">
+<%--
+	Used for including CSRF token in JSON requests
+	Also see bottom of this file for adding CSRF token to JQuery AJAX requests
+--%>
+<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
 <title>Secure Login</title>
 <jsp:include page="jspf/header-include.jsp" />
 </head>
