@@ -25,6 +25,7 @@ import java.util.UUID;
 
 import com.arangodb.ArangoCursor;
 import com.arangodb.ArangoDB;
+import com.arangodb.entity.CollectionEntity;
 import com.arangodb.util.MapBuilder;
 import com.lambdaworks.crypto.SCryptUtil;
 
@@ -50,16 +51,18 @@ public class CreateTestUser {
 	 */
 	public static void main(String[] args) {
 		final ArangoDB arangoDB = new ArangoDB.Builder().user("root").build();
+		
+		// Drop Database
+//		arangoDB.db(DB_NAME).drop();
 
 		// Create a Database
-		// arangoDB.createDatabase(DB_NAME);
-
-		// Create a Collection
-		// final CollectionEntity myArangoCollection =
-		// arangoDB.db(DB_NAME).createCollection(COLLECTION_NAME);
-
+//		arangoDB.createDatabase(DB_NAME);
+		
 		// Drop collection
-		// arangoDB.db(DB_NAME).collection(COLLECTION_NAME).drop();
+//		arangoDB.db(DB_NAME).collection(COLLECTION_NAME).drop();
+		
+		// Create a Collection
+//		arangoDB.db(DB_NAME).createCollection(COLLECTION_NAME);
 		
 		User user = new User();
 		
@@ -87,7 +90,7 @@ public class CreateTestUser {
 		user.setPhoneNumbers(phoneNumbers);
 		
 		// insert user to collection
-//		arangoDB.db(DB_NAME).collection(COLLECTION_NAME).insertDocument(user);
+		arangoDB.db(DB_NAME).collection(COLLECTION_NAME).insertDocument(user);
 		
 		String query = "for u in USER filter u.auth.status =='ACTIVE' and u.auth.userId == @userId return u.auth.password";
 		Map<String, Object> bindVars = new MapBuilder().put("userId", "jack@c12.io").get();

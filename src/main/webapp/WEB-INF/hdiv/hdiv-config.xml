@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.hdiv.org/schema/hdiv http://www.hdiv.org/schema/hdiv/hdiv.xsd">
 
-	<hdiv:config excludedExtensions="css,png,jpeg,js,eot,svg,ttf,woff,woff2" errorPage="/error" randomName="true" reuseExistingPageInAjaxRequest="true" >
+	<hdiv:config excludedExtensions="css,png,jpeg,js,eot,svg,ttf,woff,woff2,ico" errorPage="/error" randomName="true" reuseExistingPageInAjaxRequest="true" >
 		<hdiv:startPages method="get">/,/welcome,/login</hdiv:startPages>
 		<hdiv:startPages method="post">/spring_security_check</hdiv:startPages>
 		<hdiv:startParameters>_csrf</hdiv:startParameters>

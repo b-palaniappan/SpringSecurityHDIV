@@ -1,3 +1,4 @@
+	<link rel="icon" href="resources/images/favicon.ico">
 	<!-- Bootstrap -->
 	<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 	
