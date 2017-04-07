@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<!-- Fixed navbar -->
+	<%-- Fixed navbar --%>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -30,7 +30,7 @@
 
     <div class="container theme-showcase" role="main">
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <%-- Main jumbotron for a primary marketing message or call to action --%>
       <div class="jumbotron">
         <h1>Spring Secure</h1>
         <p>Welcome to Spring Security with HDIV example login page</p>
@@ -41,7 +41,7 @@
       </div>
       <div class="row">
         <div class="col-sm-3">
-        </div><!-- /.col-sm-4 -->
+        </div><%-- /.col-sm-3 --%>
         <div class="col-sm-6">
           <div class="panel panel-primary">
             <div class="panel-heading">
@@ -59,11 +59,11 @@
       	  	</form:form>
             </div>
           </div>
-        </div><!-- /.col-sm-4 -->
+        </div><%-- /.col-sm-6 --%>
         <div class="col-sm-3">
-        </div><!-- /.col-sm-4 -->
+        </div><%-- /.col-sm-3 --%>
       </div>
-    </div> <!-- /container -->
+    </div> <%-- /container --%>
 	<jsp:include page="jspf/footer-include.jsp" />
 </body>
 </html>

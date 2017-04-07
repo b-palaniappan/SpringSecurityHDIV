@@ -12,6 +12,7 @@
   </head>
 
   <body>
+  <%-- template from - http://getbootstrap.com/examples/theme/ --%>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
