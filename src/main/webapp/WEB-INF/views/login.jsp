@@ -49,16 +49,22 @@
             </div>
             <div class="panel-body">
               <form:form method="post" action="/spring_security_check" role="login">
-      	  	  <input type="email" name="username" placeholder="Email" required class="form-control input-lg" />
-          	  <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password" required />
-          	  <div class="pwstrength_viewport_progress"></div>
-          	  <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
-          	  <div>
-                <a href="/register">Create account</a> or <a href="/forgotPassword">reset password</a>
-              </div>
+              <div class="form-group">
+    			<label for="inputUserName">Email address</label>
+    			<input name="username" type="email" class="form-control" id="inputUserName" placeholder="Email" required>
+  			  </div>
+  			  <div class="form-group">
+    			<label for="password">Password</label>
+    			<input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+  			  </div>
+          	  <button type="submit" name="go" class="btn btn-primary">Sign in</button>
+          	  
       	  	</form:form>
             </div>
           </div>
+          <div>
+			<a href="/register">Create account</a> or <a href="/forgotPassword">reset password</a>
+		  </div>
         </div><%-- /.col-sm-6 --%>
         <div class="col-sm-3">
         </div><%-- /.col-sm-3 --%>

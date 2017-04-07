@@ -38,7 +38,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String Login() {
-		return "login_1";
+		return "login";
 	}
 	
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
