@@ -18,6 +18,8 @@
  */
 package io.c12.bala.service;
 
+import io.c12.bala.view.form.RegistrationForm;
+
 /**
  * @author b.palaniappan
  *
@@ -30,5 +32,11 @@ public interface UserService {
 	 * @return true if user id and password are authenticated
 	 */
 	public boolean authenticateUser(String userId, String password);
+	
+	/**
+	 * @param registerForm
+	 * @return
+	 */
+	public boolean addUser(RegistrationForm registerForm);
 	
 }

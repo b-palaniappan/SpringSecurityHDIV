@@ -18,12 +18,15 @@
  */
 package io.c12.bala.spring.controller;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import io.c12.bala.service.UserService;
 import io.c12.bala.view.form.RegistrationForm;
 
 /**
@@ -32,6 +35,9 @@ import io.c12.bala.view.form.RegistrationForm;
  */
 @Controller
 public class LoginController {
+	
+	@Resource(name = "userService")
+	UserService userService;
 	
 	/**
 	 * @return login string
@@ -78,7 +84,11 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
 	public String RegisterUser(@ModelAttribute("formRegister") RegistrationForm registerForm, Model model) {
-		
+		if (userService.addUser(registerForm)) {
+			model.addAttribute("success", "User registered successfully");
+		} else {
+			// ERROR occured
+		}
 		model.addAttribute("registrationForm", registerForm);
 		return "register";
 	}
