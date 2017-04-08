@@ -37,11 +37,13 @@
 		<div>
 			<ol class="breadcrumb">
 	  			<li>
-	  				<a href="
-						<c:url value="login">
-							<c:param name="${modifyHDIVStateParameter}" value="${hdivFormStateId}" />
-						</c:url>">Login
-					</a>
+	  				<div>
+		  				<a href="
+							<c:url value="login">
+								<c:param name="${modifyHDIVStateParameter}" value="${hdivFormStateId}" />
+							</c:url>">Login
+						</a>
+					</div>
 	  			</li>
 	  			<li class="active">Register</li>
 			</ol>
@@ -49,30 +51,30 @@
 		<div class="page-header">
 			<h1>Register</h1>
 		</div>
-		<form:form method="post" action="/registerUser" id="formRegister" >
+		<form:form method="post" action="/registerUser" id="formRegister" modelAttribute="registrationForm" >
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="form-group">
 						<label class="control-label" for="inputFirstName"><span class="req" title="Required">*</span>First Name</label> 
-						<input name="firstName" type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
+						<form:input path="firstName" cssClass="form-control" id="inputFirstName" placeholder="First Name"/>
 					</div>
 				</div>
 				<div class="col-sm-2">
 					<div class="form-group">
 						<label class="control-label" for="inputMI">MI</label> 
-						<input name="middleInitial" type="text" class="form-control" id="inputMI" placeholder="Middle Initial" required>
+						<form:input path="middleInitial" cssClass="form-control" id="inputMI" placeholder="Middle Initial" maxlength="1"/>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="form-group">
 						<label class="control-label" for="inputLastName"><span class="req" title="Required">*</span>Last Name</label> 
-						<input name="lastName" type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+						<form:input path="lastName" cssClass="form-control" id="inputLastName" placeholder="Last Name" />
 					</div>
 				</div>
 				<div class="col-sm-2">
 					<div class="form-group">
 						<label class="control-label" for="inputSuffix">Suffix</label> 
-						<input name="suffix" type="text" class="form-control" id="inputSuffix" placeholder="Suffix" required>
+						<form:input path="suffix" cssClass="form-control" id="inputSuffix" placeholder="Suffix" maxlength="3"/>
 					</div>
 				</div>
 			</div>
@@ -80,7 +82,7 @@
 				<div class="col-sm-6">
 					<div class="form-group">
 						<label class="control-label" for="inputEmail"><span class="req" title="Required">*</span>Email</label> 
-						<input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email Address" required>
+						<form:input path="email" cssClass="form-control" id="inputEmail" placeholder="Email Address"/>
 					</div>
 				</div>
 			</div>
@@ -88,13 +90,13 @@
 				<div class="col-sm-6">
 					<div class="form-group">
 						<label class="control-label" for="inputPassword"><span class="req" title="Required">*</span>Password</label> 
-						<input name="password" type="text" class="form-control" id="inputPassword" placeholder="Password" required>
+						<form:password path="password" cssClass="form-control" id="inputPassword" placeholder="Password"/>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
 						<label class="control-label" for="inputConfirmPassword"><span class="req" title="Required">*</span>Confirm Password</label> 
-						<input name="confirmPassword" type="text" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" required>
+						<form:password path="confirmPassword" cssClass="form-control" id="inputConfirmPassword" placeholder="Confirm Password"/>
 					</div>
 				</div>
 			</div>
@@ -103,43 +105,43 @@
 				<div class="col-sm-12">
 					<div class="form-group">
 						<label class="control-label" for="inputAddress1"><span class="req" title="Required">*</span>Address Line1</label> 
-						<input name="address1" type="text" class="form-control" id="inputAddress1" placeholder="Address" required>
+						<form:input path="address1" cssClass="form-control" id="inputAddress1" placeholder="Address Line 1"/>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2"><span class="req" title="Required">*</span>Address Line2</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Address" required>
+						<label class="control-label" for="inputAddress2">Address Line2</label> 
+						<form:input path="address2" cssClass="form-control" id="inputAddress2" placeholder="Address Line 2"/>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2"><span class="req" title="Required">*</span>City</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="City" required>
+						<label class="control-label" for="inputCity"><span class="req" title="Required">*</span>City</label> 
+						<form:input path="city" cssClass="form-control" id="inputCity" placeholder="City"/>
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2"><span class="req" title="Required">*</span>State</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="State" required>
+						<label class="control-label" for="inputState"><span class="req" title="Required">*</span>State</label> 
+						<form:input path="state" cssClass="form-control" id="inputState" placeholder="State"/>
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2"><span class="req" title="Required">*</span>Zip Code</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Zip Code" required>
+						<label class="control-label" for="inputZip"><span class="req" title="Required">*</span>Zip Code</label> 
+						<form:input path="zip" cssClass="form-control" id="inputZip" placeholder="Zip Code"/>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2"><span class="req" title="Required">*</span>Country</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Country" required>
+						<label class="control-label" for="inputCountry"><span class="req" title="Required">*</span>Country</label> 
+						<form:input path="country" cssClass="form-control" id="inputCountry" placeholder="Country"/>
 					</div>
 				</div>
 			</div>
@@ -147,26 +149,26 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2"><span class="req" title="Required">*</span>Primary Phone</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Phone" required>
+						<label class="control-label" for="inputPhone1"><span class="req" title="Required">*</span>Primary Phone</label> 
+						<form:input path="phone1" cssClass="form-control" id="inputPhone1" placeholder="Phone"/>
 					</div>
 				</div>
 				<div class="col-sm-2">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2"><span class="req" title="Required">*</span>Extn</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Extn" required>
+						<label class="control-label" for="inputPhone1Extn">Extn</label> 
+						<form:input path="phone1Extn" cssClass="form-control" id="inputPhone1Extn" placeholder="Extn"/>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2">Secondary Phone</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Phone" required>
+						<label class="control-label" for="inputPhone2">Secondary Phone</label> 
+						<form:input path="phone2" cssClass="form-control" id="inputPhone2" placeholder="Phone"/>
 					</div>
 				</div>
 				<div class="col-sm-2">
 					<div class="form-group">
-						<label class="control-label" for="inputAddress2">Extn</label> 
-						<input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Extn" required>
+						<label class="control-label" for="inputPhone2Extn">Extn</label> 
+						<form:input path="phone2Extn" cssClass="form-control" id="inputPhone2Extn" placeholder="Extn"/>
 					</div>
 				</div>
 			</div>
@@ -174,8 +176,8 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="text-right">
-						<button type="button" name="go" class="btn btn-default" id="btnCancel">Cancel</button>
-						<button type="submit" name="go" class="btn btn-primary" id="btnRegister">Register</button>
+						<form:button id="btnCancel" class="btn btn-default" name="Cancel">Cancel</form:button>
+						<form:button id="btnRegister" class="btn btn-primary" name="register">Register</form:button>
 					</div>
 				</div>
 			</div>

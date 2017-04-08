@@ -21,10 +21,13 @@
 
 })();
 
+jQuery.validator.setDefaults({
+	
+});
+
 /**
  * Login page
  */
-// login form Validation
 $('#formLogin').validate({
 	rules: {
 		username: {
@@ -37,10 +40,13 @@ $('#formLogin').validate({
 		}
 	},
 	messages: {
-		username: 'Email address is required',
+		username: {
+			required: 'Email address is required',
+			email: 'Not a valid Email'
+		},
 		password: {
 			required: 'Password is required',
-			minlength: 'Password need to be more than 8 char'
+			minlength: 'Password need to be more than 8 character'
 		}
 	},
 	errorClass : 'help-block',
@@ -65,12 +71,52 @@ $(function() {
 /**
  * Registration Page
  */
-$('#formRegister').validation({
+$('#formRegister').validate({
 	rules: {
-		
+		firstName: 'required',
+		lastName: 'required',
+		email: {
+			required: true,
+			email: true
+		},
+		password: {
+			required: true,
+			minlength: 8
+		},
+		confirmPassword: {
+			required: true,
+			minlength: 8,
+			equalTo: '#inputPassword'
+		},
+		address1: 'required',
+		city: 'required',
+		state: 'required',
+		zip: 'required',
+		country: 'required',
+		phone1: 'required'
 	},
 	messages: {
-		
+		firstName: 'First Name is required',
+		lastName: 'Last Name is required',
+		email: {
+			required: 'Email is required',
+			email: 'Email is not valid'
+		},
+		password: {
+			required: 'Password is required',
+			minlength: 'Password need to be more than 8 character'
+		},
+		confirmPassword: {
+			required: 'Confirm Password is required',
+			minlength: 'Confirm Password need to be more than 8 character',
+			equalTo: 'Confirm Password need to match password'
+		},
+		address1: 'Address line 1 is required',
+		city: 'City is required',
+		state: 'State is required',
+		zip: 'Zip is required',
+		country: 'Country is required',
+		phone1: 'Primary Phone is required'
 	},
 	errorClass : 'help-block',
 	highlight: function(element, errorClass) {

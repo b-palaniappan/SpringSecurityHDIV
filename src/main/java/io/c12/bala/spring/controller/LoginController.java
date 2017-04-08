@@ -19,8 +19,12 @@
 package io.c12.bala.spring.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import io.c12.bala.view.form.RegistrationForm;
 
 /**
  * @author b.palaniappan
@@ -56,8 +60,26 @@ public class LoginController {
 		return "error";
 	}
 	
-	@RequestMapping(value = "/register", method =  RequestMethod.GET)
-	public String Register() {
+	/**
+	 * @param model
+	 * @return register string
+	 */
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String Register(Model model) {
+		RegistrationForm registrationForm = new RegistrationForm();
+		model.addAttribute("registrationForm", registrationForm);
+		return "register";
+	}
+	
+	/**
+	 * @param registerForm
+	 * @param model
+	 * @return register string
+	 */
+	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+	public String RegisterUser(@ModelAttribute("formRegister") RegistrationForm registerForm, Model model) {
+		
+		model.addAttribute("registrationForm", registerForm);
 		return "register";
 	}
 
