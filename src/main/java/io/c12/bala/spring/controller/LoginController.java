@@ -37,14 +37,14 @@ import io.c12.bala.view.form.RegistrationForm;
 public class LoginController {
 	
 	@Resource(name = "userService")
-	UserService userService;
+	private UserService userService;
 	
 	/**
 	 * @return login string
 	 * Login page redirect
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String Login() {
+	public String login() {
 		return "login";
 	}
 	
@@ -53,7 +53,7 @@ public class LoginController {
 	 * Welcome page redirect
 	 */
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
-	public String Welcome() {
+	public String welcome() {
 		return "welcome";
 	}
 	
@@ -62,7 +62,7 @@ public class LoginController {
 	 * Error page Redirect
 	 */
 	@RequestMapping(value = "/error", method = RequestMethod.GET)
-	public String Error() {
+	public String error() {
 		return "error";
 	}
 	
@@ -71,7 +71,7 @@ public class LoginController {
 	 * @return register string
 	 */
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String Register(Model model) {
+	public String register(Model model) {
 		RegistrationForm registrationForm = new RegistrationForm();
 		model.addAttribute("registrationForm", registrationForm);
 		return "register";
@@ -83,11 +83,11 @@ public class LoginController {
 	 * @return register string
 	 */
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
-	public String RegisterUser(@ModelAttribute("formRegister") RegistrationForm registerForm, Model model) {
+	public String registerUser(@ModelAttribute("formRegister") RegistrationForm registerForm, Model model) throws Exception {
 		if (userService.addUser(registerForm)) {
 			model.addAttribute("success", "User registered successfully");
 		} else {
-			// ERROR occured
+			throw(new Exception("Invalid Login"));
 		}
 		model.addAttribute("registrationForm", registerForm);
 		return "register";

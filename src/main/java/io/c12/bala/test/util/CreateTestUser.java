@@ -25,7 +25,6 @@ import java.util.UUID;
 
 import com.arangodb.ArangoCursor;
 import com.arangodb.ArangoDB;
-import com.arangodb.entity.CollectionEntity;
 import com.arangodb.util.MapBuilder;
 import com.lambdaworks.crypto.SCryptUtil;
 

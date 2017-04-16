@@ -11,12 +11,12 @@
 // See the Getting Started docs for more information:
 // http://getbootstrap.com/getting-started/#support-ie10-width
 (function() {
-	'use strict';
+	"use strict";
 
 	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-		var msViewportStyle = document.createElement('style')
-		msViewportStyle.appendChild(document.createTextNode('@-ms-viewport{width:auto!important}'))
-		document.querySelector('head').appendChild(msViewportStyle)
+		var msViewportStyle = document.createElement("style")
+		msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"))
+		document.querySelector("head").appendChild(msViewportStyle)
 	}
 
 })();
@@ -28,7 +28,7 @@ jQuery.validator.setDefaults({
 /**
  * Login page
  */
-$('#formLogin').validate({
+$("#formLogin").validate({
 	rules: {
 		username: {
 			required: true,
@@ -41,20 +41,20 @@ $('#formLogin').validate({
 	},
 	messages: {
 		username: {
-			required: 'Email address is required',
-			email: 'Not a valid Email'
+			required: "Email address is required",
+			email: "Not a valid Email"
 		},
 		password: {
-			required: 'Password is required',
-			minlength: 'Password need to be more than 8 character'
+			required: "Password is required",
+			minlength: "Password need to be more than 8 character"
 		}
 	},
-	errorClass : 'help-block',
+	errorClass : "help-block",
 	highlight: function(element, errorClass) {
-		$('#' + element.id ).closest('div').addClass('has-error');
+		$("#" + element.id ).closest("div").addClass("has-error");
 	},
 	unhighlight : function(element, errorClass) {
-		$('#' + element.id ).closest('div').removeClass('has-error');
+		$("#" + element.id ).closest("div").removeClass("has-error");
 	}
 });
 
@@ -62,19 +62,19 @@ $('#formLogin').validate({
  * Welcome page logout
  */
 $(function() {
-	$('#linkLogout').on('click', function(e){
+	$("#linkLogout").on("click", function(e){
 		e.preventDefault();
-		$('#formLogout').submit();
+		$("#formLogout").submit();
 	});
 });
 
 /**
  * Registration Page
  */
-$('#formRegister').validate({
+$("#formRegister").validate({
 	rules: {
-		firstName: 'required',
-		lastName: 'required',
+		firstName: "required",
+		lastName: "required",
 		email: {
 			required: true,
 			email: true
@@ -86,43 +86,43 @@ $('#formRegister').validate({
 		confirmPassword: {
 			required: true,
 			minlength: 8,
-			equalTo: '#inputPassword'
+			equalTo: "#inputPassword"
 		},
-		address1: 'required',
-		city: 'required',
-		state: 'required',
-		zip: 'required',
-		country: 'required',
-		phone1: 'required'
+		address1: "required",
+		city: "required",
+		state: "required",
+		zip: "required",
+		country: "required",
+		phone1: "required"
 	},
 	messages: {
-		firstName: 'First Name is required',
-		lastName: 'Last Name is required',
+		firstName: "First Name is required",
+		lastName: "Last Name is required",
 		email: {
-			required: 'Email is required',
-			email: 'Email is not valid'
+			required: "Email is required",
+			email: "Email is not valid"
 		},
 		password: {
-			required: 'Password is required',
-			minlength: 'Password need to be more than 8 character'
+			required: "Password is required",
+			minlength: "Password need to be more than 8 character"
 		},
 		confirmPassword: {
-			required: 'Confirm Password is required',
-			minlength: 'Confirm Password need to be more than 8 character',
-			equalTo: 'Confirm Password need to match password'
+			required: "Confirm Password is required",
+			minlength: "Confirm Password need to be more than 8 character",
+			equalTo: "Confirm Password need to match password"
 		},
-		address1: 'Address line 1 is required',
-		city: 'City is required',
-		state: 'State is required',
-		zip: 'Zip is required',
-		country: 'Country is required',
-		phone1: 'Primary Phone is required'
+		address1: "Address line 1 is required",
+		city: "City is required",
+		state: "State is required",
+		zip: "Zip is required",
+		country: "Country is required",
+		phone1: "Primary Phone is required"
 	},
-	errorClass : 'help-block',
+	errorClass : "help-block",
 	highlight: function(element, errorClass) {
-		$('#' + element.id ).closest('div').addClass('has-error');
+		$("#" + element.id ).closest("div").addClass("has-error");
 	},
 	unhighlight : function(element, errorClass) {
-		$('#' + element.id ).closest('div').removeClass('has-error');
+		$("#" + element.id ).closest("div").removeClass("has-error");
 	}
 });
