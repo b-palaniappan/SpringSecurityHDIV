@@ -47,7 +47,7 @@ import io.c12.bala.view.form.RegistrationForm;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 	
-	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	
 	@Resource(name = "userDao")
 	private UserDao userDao;
@@ -57,6 +57,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public boolean authenticateUser(String userId, String password) {
+		logger.info("Authenticate user : " + userId);
 		String passwordHash = userDao.getPasswordHashByUserId(userId);
 		if (passwordHash == null) {
 			return false;
@@ -67,7 +68,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean addUser(RegistrationForm registerForm) {
 		User user = new User();
-		user.set_key(UUID.randomUUID().toString());
+		user.setKey(UUID.randomUUID().toString());
 		user.setFirstName(registerForm.getFirstName());
 		if (!StringUtils.isEmpty(registerForm.getMiddleInitial())) {
 			user.setMiddleInitial(registerForm.getMiddleInitial());

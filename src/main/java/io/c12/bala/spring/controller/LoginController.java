@@ -19,6 +19,7 @@
 package io.c12.bala.spring.controller;
 
 import javax.annotation.Resource;
+import javax.naming.AuthenticationException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -87,7 +88,7 @@ public class LoginController {
 		if (userService.addUser(registerForm)) {
 			model.addAttribute("success", "User registered successfully");
 		} else {
-			throw(new Exception("Invalid Login"));
+			throw(new AuthenticationException());
 		}
 		model.addAttribute("registrationForm", registerForm);
 		return "register";
