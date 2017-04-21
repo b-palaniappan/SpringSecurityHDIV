@@ -106,7 +106,6 @@ public class LoginControllerTest {
 	 * Test method for {@link io.c12.bala.spring.controller.LoginController#register(org.springframework.ui.Model)}.
 	 * @throws Exception 
 	 */
-	@SuppressWarnings("unchecked")
 	@Test
 	public void testRegister() throws Exception {
 		this.mockMvc.perform(get("/register"))
@@ -130,6 +129,20 @@ public class LoginControllerTest {
 		this.mockMvc.perform(post("/registerUser").sessionAttr("formRegister", registrationForm))
 			.andExpect(status().isOk())
 			.andExpect(model().attribute("success", "User registered successfully"))
+			.andExpect(view().name("register"));
+	}
+	
+	/**
+	 * Test method for {@link io.c12.bala.spring.controller.LoginController#registerUser(io.c12.bala.view.form.RegistrationForm, org.springframework.ui.Model)}.
+	 * @throws Exception 
+	 */
+	@Test
+	public void testNegativeRegisterUser() throws Exception {
+		RegistrationForm registrationForm = new RegistrationForm();
+		when(userService.addUser(any(RegistrationForm.class))).thenReturn(false);
+		this.mockMvc.perform(post("/registerUser").sessionAttr("formRegister", registrationForm))
+			.andExpect(status().isOk())
+			.andExpect(model().attribute("Failed", "Error occured during registration, Try again later"))
 			.andExpect(view().name("register"));
 	}
 

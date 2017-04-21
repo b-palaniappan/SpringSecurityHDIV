@@ -87,7 +87,7 @@ public class LoginController {
 		if (userService.addUser(registerForm)) {
 			model.addAttribute("success", "User registered successfully");
 		} else {
-			throw(new Exception("User info not stored"));
+			model.addAttribute("Failed", "Error occured during registration, Try again later");
 		}
 		model.addAttribute("registrationForm", registerForm);
 		return "register";

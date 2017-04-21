@@ -25,14 +25,14 @@ public class UserServiceImplTest {
 	private UserDao userDao;
 
 	@Test
-	public void test_authenticateUser() {
+	public void testAuthenticateUser() {
 		// Positive Test Case
 		when(userDao.getPasswordHashByUserId(userId)).thenReturn("$s0$41010$dAiki5TNWpASH54dazRjHg==$ogG51PevlOjcRHNkFIlprqMxUuzwJcvX7s8h5h2oMUI=");
 		assertTrue(userService.authenticateUser(userId, password));
 	}
 	
 	@Test
-	public void test_authenticateUserNegative() {
+	public void testAuthenticateUserNegative() {
 		// Negative Test Case
 		when(userDao.getPasswordHashByUserId(userId)).thenReturn("$s0$41010$YHtdaf1NcTXeP6Uv+SVptA==$ZuDOHKVFsPNodTKec5C6JdSdojfh6NdKzEp/hm0uSHE=");
 		assertFalse(userService.authenticateUser(userId, password));
