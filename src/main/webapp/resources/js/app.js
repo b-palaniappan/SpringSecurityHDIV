@@ -22,7 +22,13 @@
 })();
 
 jQuery.validator.setDefaults({
-	
+	errorClass : "help-block",
+	highlight: function(element, errorClass) {
+		$("#" + element.id ).closest("div").addClass("has-error");
+	},
+	unhighlight : function(element, errorClass) {
+		$("#" + element.id ).closest("div").removeClass("has-error");
+	}
 });
 
 /**
@@ -48,13 +54,6 @@ $("#formLogin").validate({
 			required: "Password is required",
 			minlength: "Password need to be more than 8 character"
 		}
-	},
-	errorClass : "help-block",
-	highlight: function(element, errorClass) {
-		$("#" + element.id ).closest("div").addClass("has-error");
-	},
-	unhighlight : function(element, errorClass) {
-		$("#" + element.id ).closest("div").removeClass("has-error");
 	}
 });
 
@@ -117,12 +116,5 @@ $("#formRegister").validate({
 		zip: "Zip is required",
 		country: "Country is required",
 		phone1: "Primary Phone is required"
-	},
-	errorClass : "help-block",
-	highlight: function(element, errorClass) {
-		$("#" + element.id ).closest("div").addClass("has-error");
-	},
-	unhighlight : function(element, errorClass) {
-		$("#" + element.id ).closest("div").removeClass("has-error");
 	}
 });
