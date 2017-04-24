@@ -11,7 +11,7 @@
 	</appender>
 	
 	<appender name="fileAppender" class="ch.qos.logback.core.FileAppender">
-        <file>D:\Bala\TEMP\ElctrnPymntCopy.log</file>
+        <file>D:\Bala\TEMP\SpringSecurity.log</file>
         <append>true</append>
         <encoder>
             <pattern>%d [%thread] %-5level  %logger{35} - %msg%n</pattern>

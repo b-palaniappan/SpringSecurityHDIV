@@ -117,8 +117,12 @@ public class UserServiceImpl implements UserService {
 			
 			user.getPhoneNumbers().add(phoneNumber);
 		}
-		
-		userDao.addUser(user);
+		try {
+			userDao.addUser(user);
+		} catch (Exception ex) {
+			logger.error("", ex);
+			return false;
+		}
 		return true;
 	}
 
