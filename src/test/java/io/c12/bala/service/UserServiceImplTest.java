@@ -19,17 +19,17 @@ public class UserServiceImplTest {
 	
 	private static final String userId = "jack@c12.io";
 	private static final String password = "Password1";
-	
-	@BeforeTest
-	public void injectDoubles() {
-		MockitoAnnotations.initMocks(this);
-	}
 
 	@InjectMocks
 	private UserServiceImpl userService;
 	
 	@Mock
 	private UserDao userDao;
+	
+	@BeforeTest
+	public void injectDoubles() {
+		MockitoAnnotations.initMocks(this);
+	}
 
 	@Test
 	public void testAuthenticateUser() {
