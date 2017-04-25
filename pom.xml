@@ -28,6 +28,34 @@
 	</properties>
 
 	<dependencies>
+	
+		<!-- Unit Testing using TestNg and Mockito -->
+		<!-- Have hamcrest at the beginning of the pom.xml to avoid conflicts with older hamcrested 
+		inserted as part of older version of JUnit -->
+		<dependency>
+		    <groupId>org.hamcrest</groupId>
+		    <artifactId>hamcrest-all</artifactId>
+		    <version>${hamcrest.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.mock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>${testng.testing.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-test</artifactId>
+    		<version>${spring.core.version}</version>
+    		<scope>test</scope>
+    	</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -198,31 +226,7 @@
 			<version>${scrypt.version}</version>
 		</dependency>
 
-		<!-- Unit Testing using TestNg and Mockito -->
-		<dependency>
-		    <groupId>org.hamcrest</groupId>
-		    <artifactId>hamcrest-all</artifactId>
-		    <version>${hamcrest.version}</version>
-		    <scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito.mock.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-		    <groupId>org.testng</groupId>
-		    <artifactId>testng</artifactId>
-		    <version>${testng.testing.version}</version>
-		    <scope>test</scope>
-		</dependency>
-		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-test</artifactId>
-    		<version>${spring.core.version}</version>
-    		<scope>test</scope>
-    	</dependency>
+		
 		
 	</dependencies>
 
