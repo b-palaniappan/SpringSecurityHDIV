@@ -19,6 +19,7 @@
 package io.c12.bala.service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Resource;
@@ -26,6 +27,7 @@ import javax.annotation.Resource;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import com.lambdaworks.crypto.SCryptUtil;
@@ -124,6 +126,16 @@ public class UserServiceImpl implements UserService {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public List<SimpleGrantedAuthority> getAuthorities(String userId) {
+		List<String> roleList = userDao.getUserRole(userId);
+		List<SimpleGrantedAuthority> grantedAuthorityList = new ArrayList<SimpleGrantedAuthority>();
+		for(String role : roleList) {
+			grantedAuthorityList.add(new SimpleGrantedAuthority(role));
+		}
+		return grantedAuthorityList;
 	}
 
 }

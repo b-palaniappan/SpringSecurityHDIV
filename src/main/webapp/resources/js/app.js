@@ -57,6 +57,19 @@ $("#formLogin").validate({
 	}
 });
 
+var token = $("meta[name='_csrf']").attr("content");
+var header = $("meta[name='_csrf_header']").attr("content");
+$(document).ajaxSend(function(e, xhr, options) {
+	xhr.setRequestHeader(header, token);
+});
+
+// Validate if the user id is already exits
+$("#inputEmail").focusout(function() {
+	$.post(registrationCheckEmailExistsUrl, JSON.stringify({ email: $("#inputEmail").val() }), function(data) {
+		console.log(data);
+	});
+});
+
 /**
  * Welcome page logout
  */

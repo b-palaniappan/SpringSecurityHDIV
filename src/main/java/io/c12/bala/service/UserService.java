@@ -18,6 +18,10 @@
  */
 package io.c12.bala.service;
 
+import java.util.List;
+
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import io.c12.bala.view.form.RegistrationForm;
 
 /**
@@ -38,5 +42,11 @@ public interface UserService {
 	 * @return
 	 */
 	public boolean addUser(RegistrationForm registerForm);
+	
+	/**
+	 * @param userId
+	 * @return List of Granted Authority for the user id
+	 */
+	public List<SimpleGrantedAuthority> getAuthorities(String userId);
 	
 }

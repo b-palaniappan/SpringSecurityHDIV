@@ -18,6 +18,8 @@
  */
 package io.c12.bala.db.domain;
 
+import java.util.List;
+
 /**
  * @author b.palaniappan
  *
@@ -29,6 +31,7 @@ public class Auth {
 	private Status status;
 	private int wrongLoginAttempts;
 	private boolean passwordReset;
+	private List<String> accessList;
 	
 	public String getUserId() {
 		return userId;
@@ -59,6 +62,12 @@ public class Auth {
 	}
 	public void setPasswordReset(boolean passwordReset) {
 		this.passwordReset = passwordReset;
+	}
+	public List<String> getAccessList() {
+		return accessList;
+	}
+	public void setAccessList(List<String> accessList) {
+		this.accessList = accessList;
 	}
 
 }

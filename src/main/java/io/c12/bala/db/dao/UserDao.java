@@ -18,6 +18,8 @@
  */
 package io.c12.bala.db.dao;
 
+import java.util.List;
+
 import io.c12.bala.db.domain.User;
 
 /**
@@ -46,5 +48,19 @@ public interface UserDao {
 	 * Used for Forgot password
 	 */
 	public boolean updatePassword(String paswordHash, String userKey);
+	
+	/**
+	 * @param userId
+	 * @return true if user id exists in DB
+	 * Check if the user id exists
+	 */
+	public boolean checkUserIdExists(String userId);
+	
+	/**
+	 * @param userId
+	 * @return list of user roles
+	 * get the user roels for the user id
+	 */
+	public List<String> getUserRole(String userId);
 
 }

@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -182,7 +183,11 @@
 				</div>
 			</div>
 		</form:form>
+		<spring:url var="registrationCheckEmailExists" value="/checkEmailExists" />
 	</div> <%-- /container --%>
 	<jsp:include page="jspf/footer-include.jsp" />
+	<script type="text/javascript">
+		var registrationCheckEmailExistsUrl = "${registrationCheckEmailExists}";
+	</script>
 </body>
 </html>

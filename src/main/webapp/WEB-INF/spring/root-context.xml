@@ -18,6 +18,7 @@
 		<security:intercept-url pattern="/forgotPassword" access="hasRole('ROLE_ANONYMOUS')"/>
 		<security:intercept-url pattern="/register" access="hasRole('ROLE_ANONYMOUS')"/>
 		<security:intercept-url pattern="/registerUser" access="hasRole('ROLE_ANONYMOUS')"/>
+		<security:intercept-url pattern="/checkEmailExists" access="hasRole('ROLE_ANONYMOUS')"/>
 		<security:intercept-url pattern="/**" access="authenticated"/>
 		<security:form-login login-page="/login" login-processing-url="/spring_security_check" default-target-url="/welcome" />
 		<security:logout invalidate-session="true" delete-cookies="JSESSIONID" logout-success-url="/login" logout-url="/logout" />

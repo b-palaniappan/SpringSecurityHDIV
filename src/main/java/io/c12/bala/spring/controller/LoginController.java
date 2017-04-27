@@ -18,13 +18,19 @@
  */
 package io.c12.bala.spring.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import io.c12.bala.service.UserService;
 import io.c12.bala.view.form.RegistrationForm;
@@ -91,6 +97,14 @@ public class LoginController {
 		}
 		model.addAttribute("registrationForm", registerForm);
 		return "register";
+	}
+	
+	@RequestMapping(value = "/checkEmailExists", method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public Map<String, String> checkEmailExists(@RequestBody Map<String, String> dataMap) {
+		Map<String, String> responseMap = new HashMap<String, String>();
+		responseMap.put("exists", "Y");
+		return responseMap;
 	}
 
 }

@@ -18,6 +18,8 @@
  */
 package io.c12.bala.db.dao;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
@@ -42,6 +44,8 @@ public class UserDaoImpl implements UserDao {
 	private static final String COLLECTION_NAME = "USER";
 	
 	private String passwordHash = null;
+	
+	private boolean userIdExits = false;
 
 	@Override
 	public final User addUser(User user) {
@@ -71,8 +75,33 @@ public class UserDaoImpl implements UserDao {
 		return new ArangoDB.Builder().user("root").build().db(DB_NAME);
 	}
 	
+	@Override
+	public boolean checkUserIdExists(String userId) {
+		String query = "for u in USER filter u.auth.userId == @userId return u.auth.userId";
+		Map<String, Object> bindVars = new MapBuilder().put("userId", userId).get();
+		ArangoCursor<String> userIdCursor = getDb().query(query, bindVars, null, String.class);
+		userIdCursor.forEachRemaining(returnUserId -> {
+			userIdExits = true;
+		});
+		return userIdExits;
+	}
+	
+	@Override
+	public List<String> getUserRole(String userId) {
+		List<String> roleList = new ArrayList<String>();
+		String query = "for u in USER filter u.auth.userId == @userId return u.auth.accessList";
+		Map<String, Object> bindVars = new MapBuilder().put("userId", userId).get();
+		ArangoCursor<String> roleCursor = getDb().query(query, bindVars, null, String.class);
+		roleCursor.forEachRemaining(role ->{
+			roleList.add(role);
+		});
+		return roleList;
+	}
+	
+	/**
+	 * @return ArangoCollection
+	 */
 	private final ArangoCollection getDbCollection() {
 		return new ArangoDB.Builder().user("root").build().db(DB_NAME).collection(COLLECTION_NAME);
 	}
-
 }

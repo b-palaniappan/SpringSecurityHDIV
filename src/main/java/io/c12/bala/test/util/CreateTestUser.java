@@ -66,21 +66,24 @@ public class CreateTestUser {
 		User user = new User();
 		
 		user.setKey(UUID.randomUUID().toString());
-		user.setFirstName("Jack");
-		user.setLastName("Daniel");
-		user.setMiddleInitial("R");
+		user.setFirstName("Bala");
+		user.setLastName("Pala");
+//		user.setMiddleInitial("R");
 		
 		Auth auth = new Auth();
-		auth.setUserId("jack@c12.io");
+		auth.setUserId("bala@c12.io");
 		auth.setPassword(SCryptUtil.scrypt("Password1", 16, 16, 16));
 		auth.setPasswordReset(false);
 		auth.setStatus(Status.ACTIVE);
 		auth.setWrongLoginAttempts(0);
+		auth.setAccessList(new ArrayList<String>());
+		auth.getAccessList().add("ROLE_ADMIN");
+		auth.getAccessList().add("ROLE_SU");
 		
 		user.setAuth(auth);
 		
 		PhoneNumber phoneNumber = new PhoneNumber();
-		phoneNumber.setPhoneNumber("641-555-5555");
+		phoneNumber.setPhoneNumber("515-555-5555");
 		phoneNumber.setPhoneType(PhoneType.MOBILE);
 		
 		List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();

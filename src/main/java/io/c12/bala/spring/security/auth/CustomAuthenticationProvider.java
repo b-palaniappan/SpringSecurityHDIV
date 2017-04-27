@@ -55,10 +55,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		
 		String userId = authentication.getName();
 		String password = (String) authentication.getCredentials();
+		// -- Authenticate user
 		if (userService.authenticateUser(userId, password)) {
 			Collection<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
-			grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-			
+			// -- Authorize user
+			grantedAuthorities.addAll(userService.getAuthorities(userId));
 			return new UsernamePasswordAuthenticationToken(userId, password, grantedAuthorities);
 		} 
 		logger.warn("Authentication failed for user id - " + userId);
