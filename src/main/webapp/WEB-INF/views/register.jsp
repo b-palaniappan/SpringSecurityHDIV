@@ -39,10 +39,7 @@
 			<ol class="breadcrumb">
 	  			<li>
 	  				<div>
-		  				<a href="
-							<c:url value="login">
-								<c:param name="${modifyHDIVStateParameter}" value="${hdivFormStateId}" />
-							</c:url>">Login
+		  				<a href="<c:url value="login" />">Login
 						</a>
 					</div>
 	  			</li>
@@ -185,9 +182,9 @@
 		</form:form>
 		<spring:url var="registrationCheckEmailExists" value="/checkEmailExists" />
 	</div> <%-- /container --%>
-	<jsp:include page="jspf/footer-include.jsp" />
 	<script type="text/javascript">
 		var registrationCheckEmailExistsUrl = "${registrationCheckEmailExists}";
 	</script>
+	<jsp:include page="jspf/footer-include.jsp" />
 </body>
 </html>

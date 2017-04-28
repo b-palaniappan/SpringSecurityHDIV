@@ -63,15 +63,10 @@
 				</div>
 			</div>
 			<div>
-				<a href="
-					<c:url value="register">
-						<c:param name="${modifyHDIVStateParameter}" value="${hdivFormStateId}" />
-					</c:url>">Create account
+				<a href="<c:url value="register" />">Create account
 				</a> or 
 				<a href="
-					<c:url value="forgotPassword">
-						<c:param name="${modifyHDIVStateParameter}" value="${hdivFormStateId}" />
-					</c:url>">Forgot password
+					<c:url value="forgotPassword" />">Forgot password
 				</a>				
 			</div>
 		</div> <%-- /.col-sm-6 --%>
