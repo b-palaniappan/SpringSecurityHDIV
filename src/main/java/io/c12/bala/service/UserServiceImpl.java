@@ -86,6 +86,8 @@ public class UserServiceImpl implements UserService {
 		auth.setStatus(Status.ACTIVE);
 		auth.setWrongLoginAttempts(0);
 		auth.setPasswordReset(false);
+		auth.setAccessList(new ArrayList<String>());
+		auth.getAccessList().add("ROLE_USER");
 		
 		user.setAuth(auth);
 		
