@@ -65,7 +65,6 @@ $(document).ajaxSend(function(e, xhr, options) {
 
 // Validate if the user id is already exits
 $("#inputEmail").focusout(function() {
-	console.log(JSON.stringify({ email: $("#inputEmail").val() }));
 	$.ajax({
 		type: 'POST',
 		url: registrationCheckEmailExistsUrl,
@@ -74,7 +73,6 @@ $("#inputEmail").focusout(function() {
 	    dataType: 'json',
 	    success: function(data) { alert('data: ' + data.exists); }
 	});
-	
 });
 
 /**
