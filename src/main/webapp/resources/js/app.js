@@ -12,21 +12,19 @@
 // http://getbootstrap.com/getting-started/#support-ie10-width
 (function() {
 	"use strict";
-
 	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 		var msViewportStyle = document.createElement("style");
 		msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
 		document.querySelector("head").appendChild(msViewportStyle);
 	}
-
 })();
 
 jQuery.validator.setDefaults({
 	errorClass : "help-block",
-	highlight: function(element, errorClass) {
+	highlight(element, errorClass) {
 		$("#" + element.id ).closest("div").addClass("has-error");
 	},
-	unhighlight : function(element, errorClass) {
+	unhighlight(element, errorClass) {
 		$("#" + element.id ).closest("div").removeClass("has-error");
 	}
 });
@@ -71,7 +69,12 @@ $("#inputEmail").focusout(function() {
 		data: JSON.stringify({ email: $("#inputEmail").val() }),
 		contentType: "application/json",
 		dataType: "json",
-		success(data) { alert("data: " + data.exists); }
+		success(data) { 
+			alert("data: " + data.exists);
+			if (data.exists == "N") {
+				$("#inputEmail").closest("div").addClass("has-error");
+			}
+		}
 	});
 });
 
