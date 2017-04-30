@@ -49,4 +49,10 @@ public interface UserService {
 	 */
 	public List<SimpleGrantedAuthority> getAuthorities(String userId);
 	
+	/**
+	 * @param userId
+	 * @return true if user id exists
+	 */
+	public boolean checkIfUserIdExists(String userId);
+	
 }

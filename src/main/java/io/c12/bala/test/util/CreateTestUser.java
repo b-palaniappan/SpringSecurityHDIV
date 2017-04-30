@@ -55,13 +55,13 @@ public class CreateTestUser {
 //		arangoDB.db(DB_NAME).drop();
 
 		// Create a Database
-//		arangoDB.createDatabase(DB_NAME);
+		arangoDB.createDatabase(DB_NAME);
 		
 		// Drop collection
 //		arangoDB.db(DB_NAME).collection(COLLECTION_NAME).drop();
 		
 		// Create a Collection
-//		arangoDB.db(DB_NAME).createCollection(COLLECTION_NAME);
+		arangoDB.db(DB_NAME).createCollection(COLLECTION_NAME);
 		
 		User user = new User();
 		

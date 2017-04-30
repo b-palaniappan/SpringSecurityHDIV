@@ -140,4 +140,9 @@ public class UserServiceImpl implements UserService {
 		return grantedAuthorityList;
 	}
 
+	@Override
+	public boolean checkIfUserIdExists(String userId) {
+		return userDao.checkUserIdExists(userId);
+	}
+
 }

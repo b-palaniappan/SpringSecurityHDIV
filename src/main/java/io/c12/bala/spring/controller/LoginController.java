@@ -103,7 +103,8 @@ public class LoginController {
 	@ResponseBody
 	public Map<String, String> checkEmailExists(@RequestBody Map<String, String> dataMap) {
 		Map<String, String> responseMap = new HashMap<String, String>();
-		responseMap.put("exists", "Y");
+		String userId = dataMap.get("email");
+		responseMap.put("exists", userService.checkIfUserIdExists(userId) ? "Y" : "N");
 		return responseMap;
 	}
 
