@@ -70,8 +70,8 @@ $("#inputEmail").focusout(function() {
 		url: registrationCheckEmailExistsUrl,
 		data: JSON.stringify({ email: $("#inputEmail").val() }),
 		contentType: "application/json",
-	    dataType: "json",
-	    success(data) { alert("data: " + data.exists); }
+		dataType: "json",
+		success(data) { alert("data: " + data.exists); }
 	});
 });
 
