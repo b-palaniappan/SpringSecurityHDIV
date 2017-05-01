@@ -80,7 +80,9 @@
 				<div class="col-sm-6">
 					<div class="form-group">
 						<label class="control-label" for="inputEmail"><span class="req" title="Required">*</span>Email</label> 
-						<form:input path="email" cssClass="form-control" id="inputEmail" placeholder="Email Address"/>
+						<form:input path="email" cssClass="form-control" id="inputEmail" placeholder="Email Address" aria-describedby="inputSuccess2Status"/>
+						<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  						<span id="inputSuccess2Status" class="sr-only">(success)</span>
 					</div>
 				</div>
 			</div>

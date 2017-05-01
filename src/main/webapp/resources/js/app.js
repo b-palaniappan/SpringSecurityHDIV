@@ -71,7 +71,7 @@ $("#inputEmail").focusout(function() {
 		dataType: "json",
 		success(data) { 
 			alert("data: " + data.exists);
-			if (data.exists == "N") {
+			if (data.exists === "Y") {
 				$("#inputEmail").closest("div").addClass("has-error");
 			}
 		}
