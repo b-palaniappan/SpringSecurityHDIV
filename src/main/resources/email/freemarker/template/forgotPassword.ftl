@@ -1,0 +1,1 @@
+<#-- Freemarker template for Forgot Password -->
