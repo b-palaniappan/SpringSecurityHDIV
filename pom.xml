@@ -11,7 +11,6 @@
 		<org.slf4j.version>1.7.23</org.slf4j.version>
 		<logback.version>1.2.1</logback.version>
 		<javax.mail.version>1.5.6</javax.mail.version>
-		<hibernate.core.version>5.2.8.Final</hibernate.core.version>
 		<spring.core.version>4.3.7.RELEASE</spring.core.version>
 		<hikaricp.version>2.6.0</hikaricp.version>
 		<hsqldb.version>2.3.4</hsqldb.version>
@@ -95,27 +94,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
 			<version>${spring.core.version}</version>
-		</dependency>
-
-		<!-- hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.core.version}</version>
-		</dependency>
-
-		<!-- Connection Pooling -->
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>${hikaricp.version}</version>
-		</dependency>
-
-		<!-- HyperSQL DB driver -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>${hsqldb.version}</version>
 		</dependency>
 
 		<!-- Jackson -->
