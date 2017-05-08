@@ -2,7 +2,7 @@
 <html>
 	<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>${emailTitle}</title>
+        <title>*|MC:SUBJECT|*</title>
         <style type="text/css">
 			#outlook a{padding:0}.ReadMsgBody{width:100%}.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%}body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}table,td{mso-table-lspace:0pt;mso-table-rspace:0pt}img{-ms-interpolation-mode:bicubic}body{margin:0;padding:0}img{border:0;height:auto;line-height:100%;outline:none;text-decoration:none}table{border-collapse:collapse !important}body,#bodyTable,#bodyCell{height:100% !important;margin:0;padding:0;width:100% !important}#bodyCell{padding:20px}#templateContainer{width:600px}body,#bodyTable{background-color:#DEE0E2}#bodyCell{border-top:4px solid #BBBBBB}#templateContainer{border:1px solid #BBBBBB}h1{color:#202020 !important;display:block;font-family:Helvetica;font-size:26px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}h2{color:#404040 !important;display:block;font-family:Helvetica;font-size:20px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}h3{color:#606060 !important;display:block;font-family:Helvetica;font-size:16px;font-style:italic;font-weight:normal;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}h4{color:#808080 !important;display:block;font-family:Helvetica;font-size:14px;font-style:italic;font-weight:normal;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}#templatePreheader{background-color:#F4F4F4;border-bottom:1px solid #CCCCCC}.preheaderContent{color:#808080;font-family:Helvetica;font-size:10px;line-height:125%;text-align:left}.preheaderContent a:link,.preheaderContent a:visited,.preheaderContent a .yshortcuts{color:#606060;font-weight:normal;text-decoration:underline}#templateHeader{background-color:#F4F4F4;border-top:1px solid #FFFFFF;border-bottom:1px solid #CCCCCC}.headerContent{color:#505050;font-family:Helvetica;font-size:20px;font-weight:bold;line-height:100%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;text-align:left;vertical-align:middle}.headerContent a:link,.headerContent a:visited,.headerContent a .yshortcuts{color:#EB4102;font-weight:normal;text-decoration:underline}#headerImage{height:auto;max-width:600px}#templateBody{background-color:#F4F4F4;border-top:1px solid #FFFFFF;border-bottom:1px solid #CCCCCC}.bodyContent{color:#505050;font-family:Helvetica;font-size:14px;line-height:150%;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;text-align:left}.bodyContent a:link,.bodyContent a:visited,.bodyContent a .yshortcuts{color:#EB4102;font-weight:normal;text-decoration:underline}.bodyContent img{display:inline;height:auto;max-width:560px}#templateFooter{background-color:#F4F4F4;border-top:1px solid #FFFFFF}.footerContent{color:#808080;font-family:Helvetica;font-size:10px;line-height:150%;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;text-align:left}.footerContent a:link,.footerContent a:visited,.footerContent a .yshortcuts,.footerContent a span{color:#606060;font-weight:normal;text-decoration:underline}@media only screen and (max-width: 480px){body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:none !important}body{width:100% !important;min-width:100% !important}#bodyCell{padding:10px !important}#templateContainer{max-width:600px !important;width:100% !important}h1{font-size:24px !important;line-height:100% !important}h2{font-size:20px !important;line-height:100% !important}h3{font-size:18px !important;line-height:100% !important}h4{font-size:16px !important;line-height:100% !important}#templatePreheader{display:none !important}#headerImage{height:auto !important;max-width:600px !important;width:100% !important}.headerContent{font-size:20px !important;line-height:125% !important}.bodyContent{font-size:18px !important;line-height:125% !important}.footerContent{font-size:14px !important;line-height:115% !important}.footerContent a{display:block !important}}
 		</style>
@@ -20,11 +20,13 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
                                         <tr>
                                             <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;" mc:edit="preheader_content00">
-                                                Please click below link to reset your password
+                                                Use this area to offer a short teaser of your email's content. Text here will show in the preview area of some email clients.
                                             </td>
+                                            <!-- *|IFNOT:ARCHIVE_PAGE|* -->
                                             <td valign="top" width="180" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;" mc:edit="preheader_content01">
-                                                Email not displaying correctly?<br /><a href="${viewBrowerUrl}" target="_blank">View it in your browser</a>.
+                                                Email not displaying correctly?<br /><a href="*|ARCHIVE|*" target="_blank">View it in your browser</a>.
                                             </td>
+                                            <!-- *|END:IF|* -->
                                         </tr>
                                     </table>
                                     <!-- // END PREHEADER -->
@@ -36,7 +38,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
                                         <tr>
                                             <td valign="top" class="headerContent">
-                                            	<img src="DeathtoStock_SlowDown7.png" style="max-width:600px;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
+                                            	<img src="http://gallery.mailchimp.com/2425ea8ad3/images/header_placeholder_600px.png" style="max-width:600px;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
                                             </td>
                                         </tr>
                                     </table>
@@ -49,12 +51,14 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
                                         <tr>
                                             <td valign="top" class="bodyContent" mc:edit="body_content">
-                                                <h2>Forgot your password?</h2>
-                                                <p>We've  received a request to reset the password for your account.</p>
-                                                <p>To reset your password please click on this link or cut and paste this URL into your browser (link expires in 24 hours):</p>
-                                                <p><a href="${resetPasswordUrl}" target="_blank">${resetPasswordUrl}</a></p>
-                                                <p>This link takes you to a secure page where you can change your password.</p>
-                                                <p>If you don't want to reset your password, please ignore this message. Your password will not be reset.</p> 
+                                                <h1>Designing Your Template</h1>
+                                                <h3>Creating a good-looking email is simple</h3>
+                                                Customize your template by clicking on the style editor tabs above. Set your fonts, colors, and styles. After setting your styling is all done you can click here in this area, delete the text, and start adding your own awesome content.
+                                                <br />
+                                                <br />
+                                                <h2>Styling Your Content</h2>
+                                                <h4>Make your email easy to read</h4>
+                                                After you enter your content, highlight the text you want to style and select the options you set in the style editor in the "<em>styles</em>" drop down box. Want to <a href="http://www.mailchimp.com/kb/article/im-using-the-style-designer-and-i-cant-get-my-formatting-to-change" target="_blank">get rid of styling on a bit of text</a>, but having trouble doing it? Just use the "<em>remove formatting</em>" button to strip the text of any formatting and reset your style. 
                                             </td>
                                         </tr>
                                     </table>
@@ -66,12 +70,25 @@
                                 	<!-- BEGIN FOOTER // -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
                                         <tr>
+                                            <td valign="top" class="footerContent" mc:edit="footer_content00">
+                                                <a href="*|TWITTER:PROFILEURL|*">Follow on Twitter</a>&nbsp;&nbsp;&nbsp;<a href="*|FACEBOOK:PROFILEURL|*">Friend on Facebook</a>&nbsp;&nbsp;&nbsp;<a href="*|FORWARD|*">Forward to Friend</a>&nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td valign="top" class="footerContent" style="padding-top:0;" mc:edit="footer_content01">
-                                                <em>Copyright &copy; ${currentYear} My Company, All rights reserved.</em>
+                                                <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
+                                                <br />
+                                                *|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*
                                                 <br />
                                                 <br />
-                                                This email was sent to: ${emailTo}
-                                                Email ID: ${emailId} 
+                                                <strong>Our mailing address is:</strong>
+                                                <br />
+                                                *|HTML:LIST_ADDRESS_HTML|* *|END:IF|* 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" class="footerContent" style="padding-top:0; padding-bottom:40px;" mc:edit="footer_content02">
+                                            	<a href="*|UNSUB|*">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*">update subscription preferences</a>&nbsp;
                                             </td>
                                         </tr>
                                     </table>
