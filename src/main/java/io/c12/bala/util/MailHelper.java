@@ -37,7 +37,7 @@ import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
-import io.c12.bala.email.EmailAddress;
+import io.c12.bala.db.domain.EmailAddress;
 
 /**
  * @author b.palaniappan

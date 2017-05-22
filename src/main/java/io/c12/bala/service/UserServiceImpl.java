@@ -19,7 +19,9 @@
 package io.c12.bala.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.Resource;
@@ -36,6 +38,7 @@ import io.c12.bala.db.dao.UserDao;
 import io.c12.bala.db.domain.Address;
 import io.c12.bala.db.domain.AddressType;
 import io.c12.bala.db.domain.Auth;
+import io.c12.bala.db.domain.EmailAddress;
 import io.c12.bala.db.domain.PhoneNumber;
 import io.c12.bala.db.domain.PhoneType;
 import io.c12.bala.db.domain.Status;
@@ -143,6 +146,38 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean checkIfUserIdExists(String userId) {
 		return userDao.checkUserIdExists(userId);
+	}
+
+	@Override
+	public void generateAndSendForgotPasswordEmail(String userId) {
+		if (userDao.checkUserIdExists(userId)) {
+			Map<EmailAddress, List<String>> emailAddress = new HashMap<EmailAddress, List<String>>();
+			
+			List<String> toAddress = new ArrayList<String>();
+			toAddress.add(userId);
+			emailAddress.put(EmailAddress.TO_ADDRESS, toAddress);
+			
+			List<String> fromAddress = new ArrayList<String>();
+			fromAddress.add("no-reply@c12.io");
+			emailAddress.put(EmailAddress.FROM_ADDRESS, fromAddress);
+			
+			List<String> replyToAddress = new ArrayList<String>();
+			replyToAddress.add("no-reply@c12.io");
+			emailAddress.put(EmailAddress.REPLY_TO_ADDRESS, replyToAddress);
+			
+			Map<String, Object> freeMarkerTemplateMap = new HashMap<String, Object>();
+			freeMarkerTemplateMap.put("emailTitle", "Forgot Password");
+			freeMarkerTemplateMap.put("browserView", "false");
+			freeMarkerTemplateMap.put("viewBrowerUrl", "/viewEmailInBrowser?eid=" + UUID.randomUUID().toString());
+			freeMarkerTemplateMap.put("resetPasswordUrl", "/forgot/change?pid=" + UUID.randomUUID().toString());
+			freeMarkerTemplateMap.put("currentYear", 2017);
+			freeMarkerTemplateMap.put("emailTo", userId);
+			freeMarkerTemplateMap.put("emailId", 29734);
+			
+			Map<String, String> inlineImages = new HashMap<String, String>();
+			inlineImages.put("emailHeader", "/email/freemarker/images/emailHeader.png");
+		}
+		
 	}
 
 }

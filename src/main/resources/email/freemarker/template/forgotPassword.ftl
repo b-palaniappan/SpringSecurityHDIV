@@ -1,88 +1,175 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-	<head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>${emailTitle}</title>
-        <style type="text/css">
-			#outlook a{padding:0}.ReadMsgBody{width:100%}.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%}body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}table,td{mso-table-lspace:0pt;mso-table-rspace:0pt}img{-ms-interpolation-mode:bicubic}body{margin:0;padding:0}img{border:0;height:auto;line-height:100%;outline:none;text-decoration:none}table{border-collapse:collapse !important}body,#bodyTable,#bodyCell{height:100% !important;margin:0;padding:0;width:100% !important}#bodyCell{padding:20px}#templateContainer{width:600px}body,#bodyTable{background-color:#DEE0E2}#bodyCell{border-top:4px solid #BBBBBB}#templateContainer{border:1px solid #BBBBBB}h1{color:#202020 !important;display:block;font-family:Helvetica;font-size:26px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}h2{color:#404040 !important;display:block;font-family:Helvetica;font-size:20px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}h3{color:#606060 !important;display:block;font-family:Helvetica;font-size:16px;font-style:italic;font-weight:normal;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}h4{color:#808080 !important;display:block;font-family:Helvetica;font-size:14px;font-style:italic;font-weight:normal;line-height:100%;letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;text-align:left}#templatePreheader{background-color:#F4F4F4;border-bottom:1px solid #CCCCCC}.preheaderContent{color:#808080;font-family:Helvetica;font-size:10px;line-height:125%;text-align:left}.preheaderContent a:link,.preheaderContent a:visited,.preheaderContent a .yshortcuts{color:#606060;font-weight:normal;text-decoration:underline}#templateHeader{background-color:#F4F4F4;border-top:1px solid #FFFFFF;border-bottom:1px solid #CCCCCC}.headerContent{color:#505050;font-family:Helvetica;font-size:20px;font-weight:bold;line-height:100%;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;text-align:left;vertical-align:middle}.headerContent a:link,.headerContent a:visited,.headerContent a .yshortcuts{color:#EB4102;font-weight:normal;text-decoration:underline}#headerImage{height:auto;max-width:600px}#templateBody{background-color:#F4F4F4;border-top:1px solid #FFFFFF;border-bottom:1px solid #CCCCCC}.bodyContent{color:#505050;font-family:Helvetica;font-size:14px;line-height:150%;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;text-align:left}.bodyContent a:link,.bodyContent a:visited,.bodyContent a .yshortcuts{color:#EB4102;font-weight:normal;text-decoration:underline}.bodyContent img{display:inline;height:auto;max-width:560px}#templateFooter{background-color:#F4F4F4;border-top:1px solid #FFFFFF}.footerContent{color:#808080;font-family:Helvetica;font-size:10px;line-height:150%;padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;text-align:left}.footerContent a:link,.footerContent a:visited,.footerContent a .yshortcuts,.footerContent a span{color:#606060;font-weight:normal;text-decoration:underline}@media only screen and (max-width: 480px){body,table,td,p,a,li,blockquote{-webkit-text-size-adjust:none !important}body{width:100% !important;min-width:100% !important}#bodyCell{padding:10px !important}#templateContainer{max-width:600px !important;width:100% !important}h1{font-size:24px !important;line-height:100% !important}h2{font-size:20px !important;line-height:100% !important}h3{font-size:18px !important;line-height:100% !important}h4{font-size:16px !important;line-height:100% !important}#templatePreheader{display:none !important}#headerImage{height:auto !important;max-width:600px !important;width:100% !important}.headerContent{font-size:20px !important;line-height:125% !important}.bodyContent{font-size:18px !important;line-height:125% !important}.footerContent{font-size:14px !important;line-height:115% !important}.footerContent a{display:block !important}}
-		</style>
-    </head>
-    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
-    	<center>
-        	<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
-            	<tr>
-                	<td align="center" valign="top" id="bodyCell">
-                    	<!-- BEGIN TEMPLATE // -->
-                    	<table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
-                        	<tr>
-                            	<td align="center" valign="top">
-                                	<!-- BEGIN PREHEADER // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader">
-                                        <tr>
-                                            <td valign="top" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:20px;" mc:edit="preheader_content00">
-                                                Please click below link to reset your password
-                                            </td>
-                                            <td valign="top" width="180" class="preheaderContent" style="padding-top:10px; padding-right:20px; padding-bottom:10px; padding-left:0;" mc:edit="preheader_content01">
-                                                Email not displaying correctly?<br /><a href="${viewBrowerUrl}" target="_blank">View it in your browser</a>.
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END PREHEADER -->
-                                </td>
-                            </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                	<!-- BEGIN HEADER // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
-                                        <tr>
-                                            <td valign="top" class="headerContent">
-                                            	<img src="DeathtoStock_SlowDown7.png" style="max-width:600px;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END HEADER -->
-                                </td>
-                            </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                	<!-- BEGIN BODY // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
-                                        <tr>
-                                            <td valign="top" class="bodyContent" mc:edit="body_content">
-                                                <h2>Forgot your password?</h2>
-                                                <p>We've  received a request to reset the password for your account.</p>
-                                                <p>To reset your password please click on this link or cut and paste this URL into your browser (link expires in 24 hours):</p>
-                                                <p><a href="${resetPasswordUrl}" target="_blank">${resetPasswordUrl}</a></p>
-                                                <p>This link takes you to a secure page where you can change your password.</p>
-                                                <p>If you don't want to reset your password, please ignore this message. Your password will not be reset.</p> 
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END BODY -->
-                                </td>
-                            </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                	<!-- BEGIN FOOTER // -->
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
-                                        <tr>
-                                            <td valign="top" class="footerContent" style="padding-top:0;" mc:edit="footer_content01">
-                                                <em>Copyright &copy; ${currentYear} My Company, All rights reserved.</em>
-                                                <br />
-                                                <br />
-                                                This email was sent to: ${emailTo}
-                                                Email ID: ${emailId} 
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // END FOOTER -->
-                                </td>
-                            </tr>
-                        </table>
-                        <!-- // END TEMPLATE -->
-                    </td>
-                </tr>
-            </table>
-        </center>
-    </body>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>${pageTitle}</title>
+<style type="text/css">
+@media only screen and (max-width: 620px) {
+	table[class=body] h1 {
+		font-size: 28px !important;
+		margin-bottom: 10px !important;
+	}
+	table[class=body] p, table[class=body] ul, table[class=body] ol, table[class=body] td,
+		table[class=body] span, table[class=body] a {
+		font-size: 16px !important;
+	}
+	table[class=body] .wrapper, table[class=body] .article {
+		padding: 10px !important;
+	}
+	table[class=body] .content {
+		padding: 0 !important;
+	}
+	table[class=body] .container {
+		padding: 0 !important;
+		width: 100% !important;
+	}
+	table[class=body] .main {
+		border-left-width: 0 !important;
+		border-radius: 0 !important;
+		border-right-width: 0 !important;
+	}
+	table[class=body] .btn table {
+		width: 100% !important;
+	}
+	table[class=body] .btn a {
+		width: 100% !important;
+	}
+	table[class=body] .img-responsive {
+		height: auto !important;
+		max-width: 100% !important;
+		width: auto !important;
+	}
+}
+
+@media all {
+	.ExternalClass {
+		width: 100%;
+	}
+	.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,
+		.ExternalClass td, .ExternalClass div {
+		line-height: 100%;
+	}
+	.apple-link a {
+		color: inherit !important;
+		font-family: inherit !important;
+		font-size: inherit !important;
+		font-weight: inherit !important;
+		line-height: inherit !important;
+		text-decoration: none !important;
+	}
+	.btn-primary table td:hover {
+		background-color: #34495e !important;
+	}
+	.btn-primary a:hover {
+		background-color: #34495e !important;
+		border-color: #34495e !important;
+	}
+}
+</style>
+</head>
+<body class=""
+	style="background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+	<table border="0" cellpadding="0" cellspacing="0" class="body"
+		style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f6f6f6; width: 100%;">
+		<tr>
+			<td
+				style="font-family: sans-serif; font-size: 14px; vertical-align: top;">&nbsp;</td>
+			<td class="container"
+				style="font-family: sans-serif; font-size: 14px; vertical-align: top; display: block; max-width: 580px; padding: 10px; width: 580px; Margin: 0 auto !important;">
+				<div class="content"
+					style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
+					<!-- START CENTERED WHITE CONTAINER -->
+					<span class="preheader"
+						style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This
+						is preheader text. Some clients will show this text as a preview.</span>
+					<table class="main"
+						style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #fff; border-radius: 3px; width: 100%;">
+						<!-- START MAIN CONTENT AREA -->
+						<tr>
+							<td class="wrapper"
+								style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+									<tr>
+										<td
+											style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
+											<p
+												style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi
+												there,</p>
+											<p
+												style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Sometimes
+												you just want to send a simple HTML email with a simple
+												design and clear call to action. This is it.</p>
+											<table border="0" cellpadding="0" cellspacing="0"
+												class="btn btn-primary"
+												style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;">
+												<tbody>
+													<tr>
+														<td align="left"
+															style="font-family: sans-serif; font-size: 14px; vertical-align: top; padding-bottom: 15px;">
+															<table border="0" cellpadding="0" cellspacing="0"
+																style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; width: auto;">
+																<tbody>
+																	<tr>
+																		<td
+																			style="font-family: sans-serif; font-size: 14px; vertical-align: top; background-color: #ffffff; border-radius: 5px; text-align: center; background-color: #3498db;">
+																			<a href="http://htmlemail.io" target="_blank"
+																			style="text-decoration: underline; background-color: #ffffff; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; color: #3498db; cursor: pointer; display: inline-block; font-size: 14px; font-weight: bold; margin: 0; padding: 12px 25px; text-decoration: none; text-transform: capitalize; background-color: #3498db; border-color: #3498db; color: #ffffff;">Call
+																				To Action</a>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<p
+												style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">This
+												is a really simple email template. Its sole purpose is to
+												get the recipient to click the button with no distractions.</p>
+											<p
+												style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good
+												luck! Hope it works.</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<!-- END MAIN CONTENT AREA -->
+					</table>
+					<!-- START FOOTER -->
+					<div class="footer"
+						style="clear: both; padding-top: 10px; text-align: center; width: 100%;">
+						<table border="0" cellpadding="0" cellspacing="0"
+							style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+							<tr>
+								<td class="content-block"
+									style="font-family: sans-serif; font-size: 14px; vertical-align: top; color: #999999; font-size: 12px; text-align: center;">
+									<span class="apple-link"
+									style="color: #999999; font-size: 12px; text-align: center;">Company
+										Inc, 3 Abbey Road, San Francisco CA 94102</span> <br> Don't like
+									these emails? <a href="http://i.imgur.com/CScmqnj.gif"
+									style="color: #3498db; text-decoration: underline; color: #999999; font-size: 12px; text-align: center;">Unsubscribe</a>.
+								</td>
+							</tr>
+							<tr>
+								<td class="content-block powered-by"
+									style="font-family: sans-serif; font-size: 14px; vertical-align: top; color: #999999; font-size: 12px; text-align: center;">
+									Powered by <a href="http://htmlemail.io"
+									style="color: #3498db; text-decoration: underline; color: #999999; font-size: 12px; text-align: center; text-decoration: none;">HTMLemail</a>.
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!-- END FOOTER -->
+					<!-- END CENTERED WHITE CONTAINER -->
+				</div>
+			</td>
+			<td
+				style="font-family: sans-serif; font-size: 14px; vertical-align: top;">&nbsp;</td>
+		</tr>
+	</table>
+</body>
 </html>

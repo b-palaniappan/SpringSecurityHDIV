@@ -55,4 +55,9 @@ public interface UserService {
 	 */
 	public boolean checkIfUserIdExists(String userId);
 	
+	/**
+	 * @param userId
+	 */
+	public void generateAndSendForgotPasswordEmail(String userId);
+	
 }

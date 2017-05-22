@@ -16,12 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package io.c12.bala.email;
+package io.c12.bala.db.domain;
 
 /**
  * @author b.palaniappan
  *
  */
-public enum EmailAddress {
-	FROM_ADDRESS, REPLY_TO_ADDRESS, TO_ADDRESS, CC_ADDRESS, BCC_ADDRESS
+public enum EmailType {
+	FORGOT_PASSWORD
 }
