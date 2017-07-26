@@ -8,21 +8,19 @@
 	<name>SpringSecurityHDIV Maven Webapp</name>
 
 	<properties>
-		<org.slf4j.version>1.7.23</org.slf4j.version>
-		<logback.version>1.2.1</logback.version>
+		<org.slf4j.version>1.7.25</org.slf4j.version>
+		<logback.version>1.2.3</logback.version>
 		<javax.mail.version>1.5.6</javax.mail.version>
-		<spring.core.version>4.3.8.RELEASE</spring.core.version>
-		<hikaricp.version>2.6.0</hikaricp.version>
-		<hsqldb.version>2.3.4</hsqldb.version>
+		<spring.core.version>4.3.10.RELEASE</spring.core.version>
 		<jackson.version>2.8.7</jackson.version>
 		<spring.security.version>4.2.2.RELEASE</spring.security.version>
 		<hdiv.version>3.2.0</hdiv.version>
 		<esapi.version>2.1.0.1</esapi.version>
 		<jstl.verson>1.2</jstl.verson>
-		<arangodb.driver.version>4.1.11</arangodb.driver.version>
+		<arangodb.driver.version>4.2.2</arangodb.driver.version>
 		<scrypt.version>1.4.0</scrypt.version>
 		<testng.testing.version>6.11</testng.testing.version>
-		<mockito.mock.version>2.7.22</mockito.mock.version>
+		<mockito.mock.version>2.8.47</mockito.mock.version>
 		<hamcrest.version>1.3</hamcrest.version>
 		<freemarker.version>2.3.23</freemarker.version>
 	</properties>
@@ -198,6 +196,10 @@
 				<exclusion>
 					<groupId>org.hamcrest</groupId>
 					<artifactId>hamcrest-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
