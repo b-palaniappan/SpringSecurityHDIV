@@ -25,6 +25,7 @@
 		<freemarker.version>2.3.23</freemarker.version>
 		<itextpdf.version>5.5.11</itextpdf.version>
 		<supercsv.version>2.4.0</supercsv.version>
+		<poi.version>3.16</poi.version>
 	</properties>
 
 	<dependencies>
@@ -228,6 +229,16 @@
 			<groupId>net.sf.supercsv</groupId>
 			<artifactId>super-csv</artifactId>
 			<version>${supercsv.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
 		</dependency>
 	</dependencies>
 
