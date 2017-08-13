@@ -18,14 +18,18 @@
  */
 package io.c12.bala.view.form;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * @author b.palaniappan
  *
  */
 public class RegistrationForm {
-	
+
+	@NotNull
 	private String firstName;
 	private String middleInitial;
+	@NotNull
 	private String lastName;
 	private String suffix;
 	private String email;

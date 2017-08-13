@@ -26,18 +26,20 @@
 		<itextpdf.version>5.5.11</itextpdf.version>
 		<supercsv.version>2.4.0</supercsv.version>
 		<poi.version>3.16</poi.version>
+		<hibernate.validator.version>6.0.1.Final</hibernate.validator.version>
+		<validator.api.version>2.0.0.Final</validator.api.version>
 	</properties>
 
 	<dependencies>
-	
+
 		<!-- Unit Testing using TestNg and Mockito -->
-		<!-- Have hamcrest at the beginning of the pom.xml to avoid conflicts with older hamcrested 
-		inserted as part of older version of JUnit -->
+		<!-- Have hamcrest at the beginning of the pom.xml to avoid conflicts with 
+			older hamcrested inserted as part of older version of JUnit -->
 		<dependency>
-		    <groupId>org.hamcrest</groupId>
-		    <artifactId>hamcrest-all</artifactId>
-		    <version>${hamcrest.version}</version>
-		    <scope>test</scope>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>${hamcrest.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -46,22 +48,22 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-		    <groupId>org.testng</groupId>
-		    <artifactId>testng</artifactId>
-		    <version>${testng.testing.version}</version>
-		    <scope>test</scope>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.testing.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-test</artifactId>
-    		<version>${spring.core.version}</version>
-    		<scope>test</scope>
-    	</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.core.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -213,7 +215,7 @@
 			<artifactId>scrypt</artifactId>
 			<version>${scrypt.version}</version>
 		</dependency>
-		
+
 		<!-- FreeMarker template for email -->
 		<dependency>
 			<groupId>org.freemarker</groupId>

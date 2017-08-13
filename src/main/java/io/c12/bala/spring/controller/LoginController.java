@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -89,7 +90,7 @@ public class LoginController {
 	 * @return register string
 	 */
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
-	public String registerUser(@ModelAttribute("formRegister") RegistrationForm registerForm, Model model) throws Exception {
+	public String registerUser( @Valid @ModelAttribute("formRegister") RegistrationForm registerForm, Model model) throws Exception {
 		if (userService.addUser(registerForm)) {
 			model.addAttribute("success", "User registered successfully");
 		} else {
