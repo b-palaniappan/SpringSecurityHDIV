@@ -65,7 +65,7 @@ public class CreateTestUser {
 		
 		User user = new User();
 		
-		user.setKey(UUID.randomUUID().toString());
+		user.set_key(UUID.randomUUID().toString());
 		user.setFirstName("Bala");
 		user.setLastName("Pala");
 //		user.setMiddleInitial("R");

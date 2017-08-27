@@ -38,12 +38,14 @@ import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import io.c12.bala.db.domain.EmailAddress;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author b.palaniappan
  *
  */
 @Component("mailHelper")
+@Slf4j
 public class MailHelper {
 	
 	@Autowired
@@ -129,6 +131,7 @@ public class MailHelper {
 				}				
 			}
 		};
+		log.info("Sending email to " + emailAddress.get(EmailAddress.TO_ADDRESS));
 		this.mailSender.send(preparator);;
 	}
 	
