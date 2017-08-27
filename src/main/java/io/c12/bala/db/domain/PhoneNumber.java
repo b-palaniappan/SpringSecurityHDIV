@@ -18,33 +18,19 @@
  */
 package io.c12.bala.db.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author b.palaniappan
  *
  */
+@Getter
+@Setter
 public class PhoneNumber {
 	
 	private String phoneNumber;
 	private String exten;
 	private PhoneType phoneType;
-	
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	public String getExten() {
-		return exten;
-	}
-	public void setExten(String exten) {
-		this.exten = exten;
-	}
-	public PhoneType getPhoneType() {
-		return phoneType;
-	}
-	public void setPhoneType(PhoneType phoneType) {
-		this.phoneType = phoneType;
-	}
 
 }

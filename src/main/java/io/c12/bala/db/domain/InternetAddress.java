@@ -18,26 +18,18 @@
  */
 package io.c12.bala.db.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author b.palaniappan
  *
  */
+@Getter
+@Setter
 public class InternetAddress {
 	
 	private String internetAddress;
 	private InternetAddressType internetAddressType;
 	
-	public String getInternetAddress() {
-		return internetAddress;
-	}
-	public void setInternetAddress(String internetAddress) {
-		this.internetAddress = internetAddress;
-	}
-	public InternetAddressType getInternetAddressType() {
-		return internetAddressType;
-	}
-	public void setInternetAddressType(InternetAddressType internetAddressType) {
-		this.internetAddressType = internetAddressType;
-	}
-
 }

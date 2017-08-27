@@ -20,10 +20,15 @@ package io.c12.bala.db.domain;
 
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author b.palaniappan
  *
  */
+@Setter
+@Getter
 public class Auth {
 
 	private String userId;
@@ -33,41 +38,4 @@ public class Auth {
 	private boolean passwordReset;
 	private List<String> accessList;
 	
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Status getStatus() {
-		return status;
-	}
-	public void setStatus(Status status) {
-		this.status = status;
-	}
-	public int getWrongLoginAttempts() {
-		return wrongLoginAttempts;
-	}
-	public void setWrongLoginAttempts(int wrongLoginAttempts) {
-		this.wrongLoginAttempts = wrongLoginAttempts;
-	}
-	public boolean isPasswordReset() {
-		return passwordReset;
-	}
-	public void setPasswordReset(boolean passwordReset) {
-		this.passwordReset = passwordReset;
-	}
-	public List<String> getAccessList() {
-		return accessList;
-	}
-	public void setAccessList(List<String> accessList) {
-		this.accessList = accessList;
-	}
-
 }

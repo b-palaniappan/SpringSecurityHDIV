@@ -18,22 +18,32 @@
  */
 package io.c12.bala.view.form;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author b.palaniappan
  *
  */
+@Getter
+@Setter
 public class RegistrationForm {
 
-	@NotNull
+	@NotEmpty
 	private String firstName;
 	private String middleInitial;
-	@NotNull
+	@NotEmpty
 	private String lastName;
 	private String suffix;
+	@NotEmpty @Email
 	private String email;
+	@NotEmpty @Size(min=8, max=50)
 	private String password;
+	@NotEmpty @Size(min=8, max=50)
 	private String confirmPassword;
 	
 	private String address1;
@@ -47,108 +57,5 @@ public class RegistrationForm {
 	private String phone1Extn;
 	private String phone2;
 	private String phone2Extn;
-	
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getMiddleInitial() {
-		return middleInitial;
-	}
-	public void setMiddleInitial(String middleInitial) {
-		this.middleInitial = middleInitial;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getSuffix() {
-		return suffix;
-	}
-	public void setSuffix(String suffix) {
-		this.suffix = suffix;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
-	public String getAddress1() {
-		return address1;
-	}
-	public void setAddress1(String address1) {
-		this.address1 = address1;
-	}
-	public String getAddress2() {
-		return address2;
-	}
-	public void setAddress2(String address2) {
-		this.address2 = address2;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
-	public String getZip() {
-		return zip;
-	}
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
-	public String getPhone1() {
-		return phone1;
-	}
-	public void setPhone1(String phone1) {
-		this.phone1 = phone1;
-	}
-	public String getPhone1Extn() {
-		return phone1Extn;
-	}
-	public void setPhone1Extn(String phone1Extn) {
-		this.phone1Extn = phone1Extn;
-	}
-	public String getPhone2() {
-		return phone2;
-	}
-	public void setPhone2(String phone2) {
-		this.phone2 = phone2;
-	}
-	public String getPhone2Extn() {
-		return phone2Extn;
-	}
-	public void setPhone2Extn(String phone2Extn) {
-		this.phone2Extn = phone2Extn;
-	}
 
 }
